@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -199,6 +199,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295820276}
   m_CullTransparentMesh: 1
+--- !u!1 &383176331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 383176332}
+  - component: {fileID: 383176333}
+  m_Layer: 0
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &383176332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383176331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.11, y: 0.05, z: -0.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1208497882}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &383176333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383176331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3821dc17a9ec4ff4cac5995e55455fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicProjectile: {fileID: 8833022682965429267, guid: afe6745cb05b74681a33c1e8edf6522c, type: 3}
+  basicFireRate: 0.5
+  fireTime: 0
+  allowFire: 0
+  rotationTarget: {fileID: 383176331}
 --- !u!1 &476009415
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +680,11 @@ MonoBehaviour:
 --- !u!54 &1208497881 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 1148197320416403231, guid: 3f1f96ec26c456b4d8bec7c21e44ecd1, type: 3}
+  m_PrefabInstance: {fileID: 1148197321623841222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1208497882 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1148197320416403221, guid: 3f1f96ec26c456b4d8bec7c21e44ecd1, type: 3}
   m_PrefabInstance: {fileID: 1148197321623841222}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1260374295
@@ -1359,6 +1413,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1148197320416403230, guid: 3f1f96ec26c456b4d8bec7c21e44ecd1, type: 3}
+      propertyPath: basicFireRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148197320416403230, guid: 3f1f96ec26c456b4d8bec7c21e44ecd1, type: 3}
+      propertyPath: basicProjectile
+      value: 
+      objectReference: {fileID: 8833022682965429267, guid: afe6745cb05b74681a33c1e8edf6522c, type: 3}
     - target: {fileID: 1148197320416403231, guid: 3f1f96ec26c456b4d8bec7c21e44ecd1, type: 3}
       propertyPath: m_Drag
       value: 1
@@ -1391,7 +1453,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1148197320416403230, guid: 3f1f96ec26c456b4d8bec7c21e44ecd1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f1f96ec26c456b4d8bec7c21e44ecd1, type: 3}
 --- !u!1001 &2276086935999508860
 PrefabInstance:
