@@ -34,6 +34,10 @@ public class PlayerDamage : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public void RefillHealth(float hp){
+        this.health += hp;
+    }
 }
 
 

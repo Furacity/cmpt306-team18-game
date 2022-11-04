@@ -134,4 +134,4 @@ MonoBehaviour:
   damageTime: 0
   rb: {fileID: 3286033779528217323}
   deathEffect: {fileID: 0}
-  itemDrop: {fileID: 0}
+  itemDrop: {fileID: 2505258428183197192, guid: ed0b145467f64ae4abc6914c23550f7c, type: 3}

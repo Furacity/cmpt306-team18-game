@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPack : MonoBehaviour
 {
-    [SerializeField] private int value = 1;
+    [SerializeField] private float value = 25.0f;
     [SerializeField] private float lifeTime = 5.0f;
     [SerializeField] private float rotateSpeed = 270.0f;
     [SerializeField] private float speed = 10.0f;
@@ -21,7 +21,7 @@ public class HealthPack : MonoBehaviour
         }
         
         if(other.transform.tag == "Player" && other is CapsuleCollider){
-            //GameManager.instance.AddPoints(value); //some sort of increment goes here
+            GameManager.instance.player.GetComponent<PlayerDamage>().RefillHealth(value); //some sort of increment goes here
             Destroy(this.gameObject);
         } 
     }
