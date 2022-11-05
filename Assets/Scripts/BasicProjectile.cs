@@ -6,6 +6,7 @@ public class BasicProjectile : MonoBehaviour
 {
     [SerializeField] private float lifeTime = 2.0f;
     [SerializeField] private float moveSpeed = 100.0f;
+    [SerializeField] private float damage = 30.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,5 +23,13 @@ public class BasicProjectile : MonoBehaviour
     private void MoveBasicProjectile()
     {
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Enemy")
+        {
+            other.GetComponent<EnemyController>().TakeDamage(damage);
+            Destroy(this.gameObject);
+        }
     }
 }

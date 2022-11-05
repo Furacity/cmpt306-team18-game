@@ -46,8 +46,8 @@ public class EnemyController : MonoBehaviour
 
         if (health <= 0)
         {
-            GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
-            Destroy(effect, 1.0f);
+            //GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
+            //Destroy(effect, 1.0f);
             Destroy(this.gameObject);
             
             GameObject drop = Instantiate(itemDrop, transform.position, transform.rotation);

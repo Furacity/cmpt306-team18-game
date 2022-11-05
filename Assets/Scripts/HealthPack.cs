@@ -21,7 +21,7 @@ public class HealthPack : MonoBehaviour
         }
         
         if(other.transform.tag == "Player" && other is CapsuleCollider){
-            GameManager.instance.player.GetComponent<PlayerDamage>().RefillHealth(value); //some sort of increment goes here
+            //GameManager.instance.player.GetComponent<PlayerDamage>().RefillHealth(value); //some sort of increment goes here
             Destroy(this.gameObject);
         } 
     }
