@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 4629579807971672043}
   m_Layer: 0
   m_Name: L-Room
-  m_TagString: Untagged
+  m_TagString: Lroom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

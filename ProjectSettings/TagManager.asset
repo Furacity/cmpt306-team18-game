@@ -6,6 +6,11 @@ TagManager:
   tags:
   - wall
   - Enemy
+  - Lroom
+  - hallway
+  - Troom
+  - 4wayroom
+  - endroom
   layers:
   - Default
   - TransparentFX
