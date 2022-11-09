@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
                 ReloadScene();
             }
             //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
-            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(hit.collider.gameObject.name);
             downSpeed = 0.0f;
         }
         else

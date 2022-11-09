@@ -400,7 +400,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1786754986}
-  - {fileID: 980816667}
+  - {fileID: 1475003575}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -541,11 +541,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c1895b353529714895d1cd37614b7fa, type: 3}
---- !u!4 &980816667 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1621278085914364481, guid: 8c1895b353529714895d1cd37614b7fa, type: 3}
-  m_PrefabInstance: {fileID: 980816666}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &990035587
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,6 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1596905952}
+  levelManager: {fileID: 0}
 --- !u!54 &1208497881 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 1148197320416403231, guid: 3f1f96ec26c456b4d8bec7c21e44ecd1, type: 3}
@@ -932,6 +928,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &1475003575 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5629148062498398867, guid: 8c1895b353529714895d1cd37614b7fa, type: 3}
+  m_PrefabInstance: {fileID: 980816666}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1482670752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1148197320416403221, guid: 3f1f96ec26c456b4d8bec7c21e44ecd1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.04
+      value: 10.08
       objectReference: {fileID: 0}
     - target: {fileID: 1148197320416403221, guid: 3f1f96ec26c456b4d8bec7c21e44ecd1, type: 3}
       propertyPath: m_LocalPosition.z
