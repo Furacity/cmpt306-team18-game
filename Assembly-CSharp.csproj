@@ -68,8 +68,36 @@
     <Compile Include="Assets\Scripts\PlayerAbilities.cs" />
     <Compile Include="Assets\Scripts\BasicProjectile.cs" />
     <Compile Include="Assets\Scripts\Coin.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\HealthPack.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
+    <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\PortalManager.cs" />
+    <Compile Include="Assets\Addons\Ultimate 10 Plus Shaders\Scripts\U10PS_MouseRotation.cs" />
+    <Compile Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Plexus\Plexus.cs" />
+    <Compile Include="Assets\Addons\Ultimate 10 Plus Shaders\Scripts\U10PS_SnowOverTime.cs" />
+    <Compile Include="Assets\Addons\Ultimate 10 Plus Shaders\Scripts\U10PS_DissolveOverTime.cs" />
+    <Compile Include="Assets\Addons\Ultimate 10 Plus Shaders\Scripts\U10PS_ExampleReview.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Edge Detection.shader" />
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Grass Sway.shader" />
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Blur.shader" />
+    <None Include="Assets\Addons\PeterLu_HologramShader\Shader\BasicHologram.shader" />
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Plexus\Plexus.compute" />
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Depth Mask Edge Detection.shader" />
+    <None Include="Assets\Addons\PeterLu_HologramShader\Shader\DistortionRim.shader" />
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Ocean.shader" />
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Dissolve.shader" />
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Plasma.shader" />
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Outline.shader" />
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Plexus\Plexus Line.shader" />
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Snow.shader" />
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Lava3D.shader" />
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Force Field.shader" />
+    <None Include="Assets\Addons\PeterLu_HologramShader\Documentation.txt" />
+    <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Simple Sine Wave.shader" />
+    <None Include="Assets\Addons\PeterLu_HologramShader\Shader\BaiscRim.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -323,6 +351,21 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Rocks">
+      <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>S:\Unity\2021.3.6f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -767,6 +810,51 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualEffectGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualEffectGraph.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

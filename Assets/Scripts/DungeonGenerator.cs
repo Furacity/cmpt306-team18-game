@@ -8,12 +8,19 @@ public class DungeonGenerator : MonoBehaviour {
 
         public bool visited = false;
         public bool[] status = new bool[4];
+        public bool voidSpace = false;
+        public bool hasPortal = false;
+        public bool hasShop = false;
     }
 
     public Vector2 size;
+    [Header("Check if you want to start in the middle of the grid, else it will start at the given position")]
+    public bool startAtCentre = false;
     public int startPos = 0;
+    [Header("Void Spaces are based on the size of the grid, but if multiplied by this factor can\nbe altered to create more or less. By default 20% of cells will be blank.")]
+    public float blankCellFactor = 1.0f;
 
-    public GameObject room;
+    public GameObject[] rooms;
     public Vector2 offset;
 
     List<Cell> board;
@@ -24,21 +31,94 @@ public class DungeonGenerator : MonoBehaviour {
         MapGenerator();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
     public void GenerateDungeon()
     {
         for(int i = 0; i < size.x; i++)
         {
             for(int j = 0; j <size.y; j++)
             {
-                var newRoom = Instantiate(room, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
-                newRoom.UpdateRoom(board[Mathf.FloorToInt(i + j * size.x)].status);
+                if (!board[i + Mathf.FloorToInt(j * size.y)].voidSpace)
+                {
+                    var newRoom = Instantiate(rooms[GetRoomType(board[Mathf.FloorToInt(i + j * size.x)].status)], new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
+                    if (board[i + Mathf.FloorToInt(j * size.y)].hasShop)
+                    {
+                        newRoom.CreateShop();
+                    }
+                    if (board[i + Mathf.FloorToInt(j * size.y)].hasPortal)
+                    {
+                        newRoom.CreatePortal();
+                    }
+                    newRoom.UpdateRotation(board[Mathf.FloorToInt(i + j * size.x)].status);
+                    newRoom.name += " " + i + "-" + j;
+                }
+            }
+        }
+    }
 
-                newRoom.name += " " + i + "-" + j;
+    int GetRoomType(bool[] direction)
+    {
+        int openings = 0;
+        // get the amount of openings the current cell has
+        for(int i = 0; i < direction.Length; i++)
+        {
+            if (direction[i])
+            {
+                openings++;
+            }
+        }
+        // use the openings to narrow it down
+        // only 1 room has 4 openings
+        if (openings == 4)
+        {
+            return 1;
+        }
+        // only 1 room has 3 openings
+        else if (openings == 3)
+        {
+            return 5;
+        }
+        // only 1 room has 1 opening
+        else if (openings == 1)
+        {
+            return 2;
+        } 
+        // 2 rooms have 2 openings
+        else if(openings == 2)
+        {
+            // if the openings are up and down and not right and left or they are right and left and not up and down
+            if ((direction[0] && direction[1] && !direction[2] && !direction[3]) || (!direction[0] && !direction[1] && direction[2] && direction[3]))
+            {
+                return 3;
+            } else
+            {
+                return 4;
+            }
+        } else
+        {
+            Debug.Log("No room exists within these parameters");
+            return 0;
+        }
+
+    }
+
+    void PlantBlanks()
+    {
+        int currentBlank;
+        var blanksToGenerate = Mathf.FloorToInt(((size.x * size.y) * 0.2f) * blankCellFactor);
+        for(int i = 0; i < blanksToGenerate; i++)
+        {
+            
+            currentBlank = Random.Range(0, Mathf.FloorToInt(size.x)) + (Random.Range(0, Mathf.FloorToInt(size.y)) * Mathf.FloorToInt(size.x));
+            if (currentBlank != startPos && currentBlank != Mathf.FloorToInt(size.x / 2) + Mathf.FloorToInt(size.y / 2) * Mathf.FloorToInt(size.x))
+            {
+                //Debug.Log("Void Placed");
+                board[currentBlank].visited = true;
+                board[currentBlank].voidSpace = true;
+                for (int j = 0; j < 3; j++)
+                {
+                    board[currentBlank].status[j] = false;
+                }
             }
         }
     }
@@ -56,8 +136,16 @@ public class DungeonGenerator : MonoBehaviour {
                 board.Add(new Cell());
             }
         }
-
-        int currentCell = startPos;
+        PlantBlanks();
+        // if startAtCentre is selected, find the center of the grid, if not start at startPos
+        int currentCell;
+        if (startAtCentre)
+        {
+            currentCell = Mathf.FloorToInt(size.x / 2) + Mathf.FloorToInt(size.y / 2) * Mathf.FloorToInt(size.x);
+        } else
+        {
+            currentCell = startPos;
+        }
 
         Stack<int> path = new Stack<int>();
 
@@ -120,6 +208,12 @@ public class DungeonGenerator : MonoBehaviour {
                 }
             }
         }
+        if(GetOpenings(board[0].status) == 0)
+        {
+            GameManager.instance.levelManager.GetComponent<LevelManager>().ReloadScene();
+        }
+        PlacePortal();
+        PlaceShop();
         GenerateDungeon();
     }
 
@@ -150,5 +244,62 @@ public class DungeonGenerator : MonoBehaviour {
         }
 
         return neighbors;
+    }
+
+    int GetOpenings(bool[] direction)
+    {
+        int openings = 0;
+        // get the amount of openings the current cell has
+        for (int i = 0; i < direction.Length; i++)
+        {
+            if (direction[i])
+            {
+                openings++;
+            }
+        }
+        return openings;
+    }
+    void PlaceShop()
+    {
+        Stack<int> endRooms = new Stack<int>();
+        for (int i = 0; i < size.x; i++)
+        {
+            for (int j = 0; j < size.y; j++)
+            {
+                if (GetOpenings(board[Mathf.FloorToInt(i + j * size.x)].status) == 1 && !board[Mathf.FloorToInt(i + j * size.x)].hasPortal)
+                {
+                    endRooms.Push(Mathf.FloorToInt(i + j * size.x));
+                }
+            }
+        }
+
+        int popUntil = Random.Range(1, endRooms.Count);
+        for(int k = endRooms.Count; k == popUntil; k--)
+        {
+            endRooms.Pop();
+        }
+        board[endRooms.Pop()].hasShop = true;
+    }
+
+    void PlacePortal()
+    {
+        Stack<int> endRooms = new Stack<int>();
+        for (int i = 0; i < size.x; i++)
+        {
+            for (int j = 0; j < size.y; j++)
+            {
+                if (GetOpenings(board[Mathf.FloorToInt(i + j * size.x)].status) == 1)
+                {
+                    endRooms.Push(Mathf.FloorToInt(i + j * size.x));
+                }
+            }
+        }
+
+        int popUntil = Random.Range(1, Mathf.FloorToInt(endRooms.Count * 0.8f));
+        for (int k = endRooms.Count; k == popUntil; k--)
+        {
+            endRooms.Pop();
+        }
+        board[endRooms.Pop()].hasPortal = true;
     }
 }

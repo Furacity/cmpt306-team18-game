@@ -6,6 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public GameObject player;
+<<<<<<< Updated upstream
+=======
+    public GameObject levelManager;
+
+>>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
