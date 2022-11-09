@@ -29,8 +29,8 @@ public class PlayerDamage : MonoBehaviour
 
         if (health <= 0)
         {
-            GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
-            Destroy(effect, 1.0f);
+            //GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
+            //Destroy(effect, 1.0f);
             Destroy(this.gameObject);
         }
     }

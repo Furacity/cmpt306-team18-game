@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DungeonGenerator : MonoBehaviour {
 
@@ -210,7 +211,7 @@ public class DungeonGenerator : MonoBehaviour {
         }
         if(GetOpenings(board[0].status) == 0)
         {
-            GameManager.instance.levelManager.GetComponent<LevelManager>().ReloadScene();
+            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
         }
         PlacePortal();
         PlaceShop();

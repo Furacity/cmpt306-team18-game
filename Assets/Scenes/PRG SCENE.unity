@@ -475,7 +475,7 @@ MonoBehaviour:
   size: {x: 10, y: 10}
   startAtCentre: 1
   startPos: 0
-  blankCellFactor: 1
+  blankCellFactor: 1.2
   rooms:
   - {fileID: 1583761918226625669, guid: ce64bf1f8c4226e4c91bbd6b643f995b, type: 3}
   - {fileID: 1926921961234150126, guid: 8584ab48c4a36b14f8f74b69a587e5cb, type: 3}
