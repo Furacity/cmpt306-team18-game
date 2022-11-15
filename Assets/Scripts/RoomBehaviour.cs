@@ -11,6 +11,8 @@ public class RoomBehaviour : MonoBehaviour
     [Header("Only used for endrooms")]
     public GameObject Shop;
 
+    public GameObject[] spawners;
+
     public bool[] testStatus;
 
 

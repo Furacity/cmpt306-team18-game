@@ -12,6 +12,7 @@ public class DungeonGenerator : MonoBehaviour {
         public bool voidSpace = false;
         public bool hasPortal = false;
         public bool hasShop = false;
+        public bool spawnersActive = false;
     }
 
     public Vector2 size;
@@ -49,6 +50,19 @@ public class DungeonGenerator : MonoBehaviour {
                     if (board[i + Mathf.FloorToInt(j * size.y)].hasPortal)
                     {
                         newRoom.CreatePortal();
+                    }
+                    if(Random.Range(0, 100) >= 50 && !board[i + Mathf.FloorToInt(j * size.y)].hasPortal && !board[i + Mathf.FloorToInt(j * size.y)].hasShop)
+                    {
+                        for(int k = 0; k < newRoom.spawners.Length; k++)
+                        {
+                            newRoom.spawners[k].GetComponent<Spawner>().spawningAllowed = true;
+                        }
+                    } else
+                    {
+                        for (int k = 0; k < newRoom.spawners.Length; k++)
+                        {
+                            newRoom.spawners[k].GetComponent<Spawner>().spawningAllowed = false;
+                        }
                     }
                     newRoom.UpdateRotation(board[Mathf.FloorToInt(i + j * size.x)].status);
                     newRoom.name += " " + i + "-" + j;

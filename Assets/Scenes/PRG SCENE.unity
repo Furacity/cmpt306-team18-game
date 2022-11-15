@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 5893498618212225722, guid: ba450d245a54c834897c2471cca5b4de, type: 3}
+      propertyPath: spawnRate
+      value: Infinity
+      objectReference: {fileID: 0}
     - target: {fileID: 5893498618212225723, guid: ba450d245a54c834897c2471cca5b4de, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -479,7 +483,7 @@ MonoBehaviour:
   rooms:
   - {fileID: 1583761918226625669, guid: ce64bf1f8c4226e4c91bbd6b643f995b, type: 3}
   - {fileID: 1926921961234150126, guid: 8584ab48c4a36b14f8f74b69a587e5cb, type: 3}
-  - {fileID: 6781841671026830111, guid: 8c1895b353529714895d1cd37614b7fa, type: 3}
+  - {fileID: 5247295435057357066, guid: bb853b2ebcc53064590097cc75dfb2c3, type: 3}
   - {fileID: 3294703183289902630, guid: 383fac314588f0d4ba1e441dc310b302, type: 3}
   - {fileID: 3798248668938099767, guid: e1f1c42c01953a54f9b286519aa7f9e5, type: 3}
   - {fileID: 8006227076792493406, guid: 82acad344ee7d5646b7da9e57d84d185, type: 3}
