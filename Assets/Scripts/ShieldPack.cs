@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ShieldPack : MonoBehaviour
 {
-    [SerializeField] private int value = 100;
     [SerializeField] private float lifeTime = 5.0f;
     [SerializeField] private float rotateSpeed = 270.0f;
     [SerializeField] private float speed = 10.0f;
@@ -21,7 +20,7 @@ public class ShieldPack : MonoBehaviour
         }
         
         if(other.transform.tag == "Player" && other is CapsuleCollider){
-            //GameManager.instance.AddPoints(value); //some sort of increment goes here
+            other.transform.GetComponent<PlayerDamage>().shieldFill(); 
             Destroy(this.gameObject);
         } 
     }

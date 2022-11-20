@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private int coins = 0;
     public static GameManager instance = null;
     public GameObject player;
     public GameObject levelManager;
@@ -29,5 +30,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    public void addCoins(int value)
+    {
+        this.coins++;
     }
 }
