@@ -7,7 +7,7 @@ public class HealthPack : MonoBehaviour
     [SerializeField] private float value = 25.0f;
     [SerializeField] private float lifeTime = 5.0f;
     [SerializeField] private float rotateSpeed = 270.0f;
-    [SerializeField] private float speed = 10.0f;
+    [SerializeField] private float speed = 3.0f;
 
     void Start()
     {
@@ -21,7 +21,8 @@ public class HealthPack : MonoBehaviour
         }
         
         if(other.transform.tag == "Player" && other is CapsuleCollider){
-            //GameManager.instance.player.GetComponent<PlayerDamage>().RefillHealth(value); //some sort of increment goes here
+            other.transform.GetComponent<PlayerDamage>().RefillHealth(value); //some sort of increment goes here
+            
             Destroy(this.gameObject);
         } 
     }
