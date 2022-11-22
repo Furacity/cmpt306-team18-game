@@ -20,7 +20,7 @@ public class DungeonGenerator : MonoBehaviour {
     public bool startAtCentre = false;
     public int startPos = 0;
     [Header("Void Spaces are based on the size of the grid, but if multiplied by this factor can\nbe altered to create more or less. By default 20% of cells will be blank.")]
-    public float blankCellFactor = 1.0f;
+    public float blankCellFactor = 0.8f;
 
     public GameObject[] rooms;
     public Vector2 offset;
@@ -29,7 +29,10 @@ public class DungeonGenerator : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start()
-    {      
+    {
+        size = new Vector2(MainMenu.size, MainMenu.size);
+        blankCellFactor = (1 - (MainMenu.density / 10)) + 1;
+        Debug.Log(blankCellFactor);
         MapGenerator();
     }
 

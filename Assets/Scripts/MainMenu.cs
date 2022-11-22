@@ -25,6 +25,7 @@ public class MainMenu : MonoBehaviour
         mutatorCanvasHolder.SetActive(false);
         gameSettingsCanvasHolder.SetActive(false);
         normal.GetComponent<Image>().color = new Color(0.5424528f, 0.7658292f, 1.0f);
+        Time.timeScale = 1.0f;
     }
 
     // Update is called once per frame
