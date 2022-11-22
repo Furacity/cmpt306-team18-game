@@ -12,6 +12,9 @@ TagManager:
   - Enemy
   - Portal
   - endroom
+  - easy
+  - normal
+  - hard
   layers:
   - Default
   - TransparentFX

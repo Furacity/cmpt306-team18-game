@@ -21,4 +21,10 @@ public class LevelManager : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
+
+    public void ChangeScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+
 }
