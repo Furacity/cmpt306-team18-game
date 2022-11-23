@@ -12,6 +12,7 @@ public class DungeonGenerator : MonoBehaviour {
         public bool voidSpace = false;
         public bool hasPortal = false;
         public bool hasShop = false;
+        public bool spawnersActive = false;
     }
 
     public Vector2 size;
@@ -19,7 +20,7 @@ public class DungeonGenerator : MonoBehaviour {
     public bool startAtCentre = false;
     public int startPos = 0;
     [Header("Void Spaces are based on the size of the grid, but if multiplied by this factor can\nbe altered to create more or less. By default 20% of cells will be blank.")]
-    public float blankCellFactor = 1.0f;
+    public float blankCellFactor = 0.8f;
 
     public GameObject[] rooms;
     public Vector2 offset;
@@ -28,7 +29,13 @@ public class DungeonGenerator : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start()
-    {      
+    {
+        if (MainMenu.size != 10 && MainMenu.density != 0.8f)
+        {
+            size = new Vector2(MainMenu.size, MainMenu.size);
+            blankCellFactor = (1 - (MainMenu.density / 10)) + 1;
+        }
+        Debug.Log(blankCellFactor);
         MapGenerator();
     }
 
@@ -49,6 +56,19 @@ public class DungeonGenerator : MonoBehaviour {
                     if (board[i + Mathf.FloorToInt(j * size.y)].hasPortal)
                     {
                         newRoom.CreatePortal();
+                    }
+                    if(Random.Range(0, 100) >= 50 && !board[i + Mathf.FloorToInt(j * size.y)].hasPortal && !board[i + Mathf.FloorToInt(j * size.y)].hasShop)
+                    {
+                        for(int k = 0; k < newRoom.spawners.Length; k++)
+                        {
+                            newRoom.spawners[k].GetComponent<Spawner>().spawningAllowed = true;
+                        }
+                    } else
+                    {
+                        for (int k = 0; k < newRoom.spawners.Length; k++)
+                        {
+                            newRoom.spawners[k].GetComponent<Spawner>().spawningAllowed = false;
+                        }
                     }
                     newRoom.UpdateRotation(board[Mathf.FloorToInt(i + j * size.x)].status);
                     newRoom.name += " " + i + "-" + j;

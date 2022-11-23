@@ -4,18 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - wall
-<<<<<<< Updated upstream
-=======
-  - Enemy
-  - Lroom
-  - hallway
-  - Troom
   - 4wayroom
-  - endroom
+  - hallway
+  - Lroom
+  - Troom
   - floor
+  - Enemy
   - Portal
->>>>>>> Stashed changes
+  - endroom
+  - easy
+  - normal
+  - hard
+  - wall
   layers:
   - Default
   - TransparentFX

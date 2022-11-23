@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
 
     public GameObject deathEffect;
 
-    public GameObject itemDrop;
+    public GameObject[] itemDrop = new GameObject[4];
 
 
 
@@ -46,12 +46,19 @@ public class EnemyController : MonoBehaviour
 
         if (health <= 0)
         {
+            float rand = Random.Range(0.0f,10.0f);
             //GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
             //Destroy(effect, 1.0f);
             Destroy(this.gameObject);
 
-            GameObject drop = Instantiate(itemDrop, transform.position, transform.rotation);
-
+            //GameObject drop = Instantiate(itemDrop, transform.position, Quaternion.identity);
+            if(rand >= 2.0f && rand<=4.0f){
+                Instantiate(itemDrop[0],transform.position, Quaternion.identity);
+            }else if(rand >=5.0f && rand <= 7.0f){
+                Instantiate(itemDrop[1],transform.position, Quaternion.identity);
+            }else if(rand >= 9.0f){
+                Instantiate(itemDrop[2],transform.position, Quaternion.identity);
+            }
 
 
         }
@@ -60,7 +67,7 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.transform.tag == "Player" && Time.time > damageTime)
+        if (other.transform.tag == "Player" && Time.time > damageTime && other is CapsuleCollider)
         {
             other.transform.GetComponent<PlayerDamage>().TakeDamage(damageToPlayer);
             damageTime = Time.time + damageRate;

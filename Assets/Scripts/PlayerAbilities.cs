@@ -10,6 +10,9 @@ public class PlayerAbilities : MonoBehaviour
     [SerializeField] private float basicFireRate = 0.5f;
     [SerializeField] private float fireTime;
     [SerializeField] private bool allowFire;
+    [SerializeField] public float damage = 30.0f;
+
+    private float remainingBuffTime = 0.0f;
     private Vector3 mouse_pos;
     private Vector3 object_pos;
     private float angle;
@@ -24,6 +27,15 @@ public class PlayerAbilities : MonoBehaviour
     {
         BasicAttack();
         LookAtCamera();
+        if(remainingBuffTime > 0){
+            remainingBuffTime -= Time.deltaTime;
+        }else{
+            this.damage = 30.0f;
+        }
+    }
+    public void damageBuff(){
+        this.damage = 60.0f;
+        this.remainingBuffTime = 10.0f;
     }
 
     private void BasicAttack()
@@ -35,6 +47,10 @@ public class PlayerAbilities : MonoBehaviour
             Instantiate(basicProjectile, transform.position, transform.rotation);
             fireTime = Time.time + basicFireRate;
         }
+    }
+
+    public float GetDamage(){
+        return this.damage;
     }
 
     private void LookAtCamera()

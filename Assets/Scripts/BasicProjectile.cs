@@ -6,7 +6,7 @@ public class BasicProjectile : MonoBehaviour
 {
     [SerializeField] private float lifeTime = 2.0f;
     [SerializeField] private float moveSpeed = 100.0f;
-    [SerializeField] private float damage = 30.0f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,11 @@ public class BasicProjectile : MonoBehaviour
     {
         if (other.transform.tag == "Enemy")
         {
-            other.GetComponent<EnemyController>().TakeDamage(damage);
+            other.GetComponent<EnemyController>().TakeDamage(GameManager.instance.player.transform.GetChild(2).gameObject.GetComponent<PlayerAbilities>().GetDamage());
+            Destroy(this.gameObject);
+        }
+        else if (other.transform.tag == "wall")
+        {
             Destroy(this.gameObject);
         }
     }

@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 {
 
     public GameObject enemyPrefab;
-
+    public bool spawningAllowed = false;
     [SerializeField] private float spawnRate = 2.0f;
     private float spawnTimer;
 
@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        if (Time.time > spawnTimer)
+        if (spawningAllowed && Vector3.Distance(transform.position, GameManager.instance.player.transform.position) < 104 && Time.time > spawnTimer)
         {
             Instantiate(enemyPrefab, transform.position, transform.rotation);
             spawnTimer = Time.time + spawnRate;

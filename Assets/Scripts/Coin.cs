@@ -21,7 +21,7 @@ public class Coin : MonoBehaviour
         }
         
         if(other.transform.tag == "Player" && other is CapsuleCollider){
-            //GameManager.instance.AddPoints(value); //some sort of increment goes here
+            GameManager.instance.addCoins(value); //some sort of increment goes here
             Destroy(this.gameObject);
         } 
     }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DamageBooster : MonoBehaviour
 {
-    [SerializeField] private int value = 5;
     [SerializeField] private float lifeTime = 5.0f;
     [SerializeField] private float rotateSpeed = 270.0f;
     [SerializeField] private float speed = 10.0f;
@@ -21,7 +20,7 @@ public class DamageBooster : MonoBehaviour
         }
         
         if(other.transform.tag == "Player" && other is CapsuleCollider){
-            //GameManager.instance.AddPoints(value); //some sort of increment goes here
+            GameManager.instance.player.transform.GetChild(2).gameObject.GetComponent<PlayerAbilities>().damageBuff(); //some sort of increment goes here
             Destroy(this.gameObject);
         } 
     }
