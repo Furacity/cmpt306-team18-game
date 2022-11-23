@@ -54,6 +54,9 @@ public class EnemyController : MonoBehaviour
             //GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
             //Destroy(effect, 1.0f);
             Destroy(this.gameObject);
+            MainMenu.currency++;
+            GameManager.instance.SetCurrencyText();
+
 
             //GameObject drop = Instantiate(itemDrop, transform.position, Quaternion.identity);
             if(rand >= 2.0f && rand<=4.0f){

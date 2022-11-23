@@ -20,10 +20,10 @@ public class Coin : MonoBehaviour
             transform.position = Vector3.MoveTowards(this.transform.position, other.transform.position, speed * Time.deltaTime);
         }
         
-        if(other.transform.tag == "Player" && other is CapsuleCollider){
-            GameManager.instance.addCoins(value); //some sort of increment goes here
-            Destroy(this.gameObject);
-        } 
+        //if(other.transform.tag == "Player" && other is CapsuleCollider){
+        //    GameManager.instance.addCoins(value); //some sort of increment goes here
+        //    Destroy(this.gameObject);
+        //} 
     }
     // Update is called once per frame
     void Update()

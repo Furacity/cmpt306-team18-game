@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     static public int density { get; set; }
     static public int size { get; set; }
     static public int currentRound { get; set; }
+    static public int currency { get; set; }
 
     static public int currency { get; set; }
 
@@ -28,6 +29,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currency = 0;
         difficulty = 1;
         density = 2;
         size = 10;

@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private int coins = 0;
+    
     public static GameManager instance = null;
     public GameObject player;
     public GameObject levelManager;
+    public Text currencyText;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +35,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void addCoins(int value)
+
+    
+
+    public void SetCurrencyText()
     {
-        this.coins++;
+        currencyText.text = "Currency: " + MainMenu.currency.ToString();
     }
 }

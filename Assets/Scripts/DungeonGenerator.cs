@@ -23,7 +23,6 @@ public class DungeonGenerator : MonoBehaviour {
     [Header("Void Spaces are based on the size of the grid, but if multiplied by this factor can\nbe altered to create more or less. By default 20% of cells will be blank.")]
     public float blankCellFactor = 0.8f;
     public Text roundNumber;
-
     public GameObject[] rooms;
     public Vector2 offset;
 
@@ -34,8 +33,13 @@ public class DungeonGenerator : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< Updated upstream
         panel.SetActive(false);
         roundNumber.text = "Round " + MainMenu.currentRound;
+=======
+
+        GameManager.instance.SetCurrencyText();
+>>>>>>> Stashed changes
         if (MainMenu.size != 10 && MainMenu.density != 0.8f)
         {
             size = new Vector2(MainMenu.size, MainMenu.size);
