@@ -31,7 +31,7 @@ public class BasicProjectile : MonoBehaviour
             other.GetComponent<EnemyController>().TakeDamage(GameManager.instance.player.transform.GetChild(2).gameObject.GetComponent<PlayerAbilities>().GetDamage());
             Destroy(this.gameObject);
         }
-        else if (other.transform.tag == "Wall")
+        else if (other.transform.tag == "wall")
         {
             Destroy(this.gameObject);
         }

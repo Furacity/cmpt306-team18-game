@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 53387724205004334}
   m_Layer: 0
   m_Name: Plane.006
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -288,6 +288,7 @@ MonoBehaviour:
   doors: []
   Portal: {fileID: 0}
   Shop: {fileID: 0}
+  spawners: []
   testStatus: 
 --- !u!1 &8462320859641925903
 GameObject:

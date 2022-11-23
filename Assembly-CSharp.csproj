@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\BasicProjectile.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Perks.cs" />
+    <Compile Include="Assets\Scripts\MainMenuInteractables.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\ShieldPack.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Assets\Scripts\RoomBehaviour.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Addons\Ultimate 10 Plus Shaders\Scripts\U10PS_DissolveOverTime.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Addons\Ultimate 10 Plus Shaders\Scripts\U10PS_ExampleReview.cs" />
     <Compile Include="Assets\Addons\Cool Visual Effects - Part 1\Scripts\ConstantRotation.cs" />
     <Compile Include="Assets\Scripts\PlayerAbilities.cs" />
@@ -81,10 +83,16 @@
     <Compile Include="Assets\Scripts\ShopMenu.cs" />
     <Compile Include="Assets\Addons\Ultimate 10 Plus Shaders\Scripts\U10PS_SnowOverTime.cs" />
     <Compile Include="Assets\Scripts\HealthPack.cs" />
-    <Compile Include="Assets\Scripts\Spawner.cs" />
-    <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\MainMenuInteractables.cs" />
     <Compile Include="Assets\Scripts\MutatorSingleton.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
+    <Compile Include="Assets\Scripts\FadeController.cs" />
+    <Compile Include="Assets\Scripts\MinigunProjectile.cs" />
+    <Compile Include="Assets\Scripts\RocketLauncher.cs" />
+    <Compile Include="Assets\Scripts\ShotgunPellet.cs" />
+    <Compile Include="Assets\Scripts\RocketLauncherMissile.cs" />
+    <Compile Include="Assets\Scripts\Shotgun.cs" />
+    <Compile Include="Assets\Scripts\MissileExplosion.cs" />
+    <Compile Include="Assets\Scripts\MiniGun.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Edge Detection.shader" />

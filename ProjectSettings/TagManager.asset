@@ -15,6 +15,7 @@ TagManager:
   - easy
   - normal
   - hard
+  - wall
   layers:
   - Default
   - TransparentFX

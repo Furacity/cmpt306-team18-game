@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3058643349302674895}
   m_Layer: 0
   m_Name: Floor.002
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 4428458449520822391}
   m_Layer: 0
   m_Name: Walls.002
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,6 +346,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walls: []
   doors: []
+  Portal: {fileID: 0}
+  Shop: {fileID: 0}
+  spawners: []
   testStatus: 
 --- !u!1 &9188516396526574805
 GameObject:

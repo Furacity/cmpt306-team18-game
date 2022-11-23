@@ -16,6 +16,12 @@ public class MainMenu : MonoBehaviour
     public Button normal;
     public GameObject sceneManager;
 
+    public GameObject forwardAudio;
+    public GameObject backAudio;
+    public GameObject sliderAudio;
+    public GameObject fadepanel;
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,22 +37,21 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void UpdateDifficulty()
-    {
 
     }
 
-    public void UpdateDensity()
+    public void PlayButtonForward()
     {
-        
+        forwardAudio.GetComponent<AudioSource>().Play();
     }
 
-    public void UpdateSize()
+    public void PlayButtonBack()
     {
-
+        backAudio.GetComponent<AudioSource>().Play();
+    }
+    public void PlaySliderChange()
+    {
+        sliderAudio.GetComponent<AudioSource>().Play();
     }
 
     public void HideMutatorCanvas()
@@ -70,6 +75,12 @@ public class MainMenu : MonoBehaviour
     }
 
     public void StartGame()
+    {
+        animator.SetTrigger("FadeOut");
+        
+    }
+
+    public void OnFadeComplete()
     {
         sceneManager.GetComponent<LevelManager>().ChangeScene("PRG SCENE");
     }

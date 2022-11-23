@@ -30,8 +30,11 @@ public class DungeonGenerator : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-        size = new Vector2(MainMenu.size, MainMenu.size);
-        blankCellFactor = (1 - (MainMenu.density / 10)) + 1;
+        if (MainMenu.size != 10 && MainMenu.density != 0.8f)
+        {
+            size = new Vector2(MainMenu.size, MainMenu.size);
+            blankCellFactor = (1 - (MainMenu.density / 10)) + 1;
+        }
         Debug.Log(blankCellFactor);
         MapGenerator();
     }
