@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 383176332}
   - component: {fileID: 383176333}
+  - component: {fileID: 934128238}
+  - component: {fileID: 934128239}
+  - component: {fileID: 934128240}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -48,7 +51,63 @@ MonoBehaviour:
   basicFireRate: 0.5
   fireTime: 0
   allowFire: 0
+  damage: 30
   rotationTarget: {fileID: 383176331}
+--- !u!114 &934128238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383176331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5775ed483773b4426a21bcc459e9ed11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pellet: {fileID: 7840586543686240434, guid: 22397d1ce297545bb8375951f5a552e9, type: 3}
+  pelletCount: 20
+  spreadAngle: 25
+  basicFireRate: 0.5
+  fireTime: 0
+  allowFire: 0
+  damage: 100
+  pelletFireVel: 100
+--- !u!114 &934128239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383176331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e09fd517d79e4bfc86ee3358ebac080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missile: {fileID: 5252431711982598510, guid: 959efd5945af14fa3b5efa5f9c25f943, type: 3}
+  basicFireRate: 0.5
+  fireTime: 0
+  allowFire: 0
+  damage: 100
+--- !u!114 &934128240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383176331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14b4dc728da964f469f875544d762a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicProjectile: {fileID: 6002041987660410235, guid: e6bc0e65f90c34dd0b82095b4d1b56c4, type: 3}
+  basicFireRate: 0.5
+  fireTime: 0
+  damage: 50
+  magazine: 50
+  spreadAngle: 5
 --- !u!1 &1148197320416403220
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,6 +123,7 @@ GameObject:
   - component: {fileID: 1148197320416403231}
   - component: {fileID: 1148197320416403217}
   - component: {fileID: -5220116701997603317}
+  - component: {fileID: 1208497888}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -149,7 +209,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 1
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -196,8 +256,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8456959ba5866c344b32e5588b07805c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   health: 100
+  maxShield: 100
+  shield: 0
   deathEffect: {fileID: 0}
+  healthbar: {fileID: 0}
+  shieldbar: {fileID: 0}
+--- !u!135 &1208497888
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148197320416403220}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1148197320565682214
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,5 +32,9 @@ public class ShotgunPellet : MonoBehaviour
             other.GetComponent<EnemyController>().TakeDamage(GameManager.instance.player.transform.GetChild(2).gameObject.GetComponent<Shotgun>().GetDamage());
             Destroy(this.gameObject);
         }
+        if (other.transform.tag == "wall")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

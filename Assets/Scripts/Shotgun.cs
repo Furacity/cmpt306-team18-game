@@ -33,16 +33,11 @@ public class Shotgun : MonoBehaviour
     {
         if (Input.GetKeyDown("q") && Time.time > fireTime)
         {
-            int i = 0;
-            foreach(Quaternion quat in pellets.ToArray())
+            for (int i = 0; i < pelletCount; i++)
             {
-                pellets[i] = Random.rotation;
-                // Fix the z for pellets[i]
-
                 GameObject p = Instantiate(pellet, transform.position, transform.rotation);
-                p.transform.rotation = Quaternion.RotateTowards(p.transform.rotation, pellets[i], spreadAngle);
+                p.transform.Rotate(Vector3.up * Random.Range(-spreadAngle / 2, spreadAngle / 2));
                 p.GetComponent<Rigidbody>().AddForce(p.transform.right * pelletFireVel);
-                i++;
                 fireTime = Time.time + basicFireRate;
             }
         }

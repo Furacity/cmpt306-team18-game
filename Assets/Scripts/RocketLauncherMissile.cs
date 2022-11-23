@@ -44,5 +44,10 @@ public class RocketLauncherMissile : MonoBehaviour
             Destroy(this.gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
         }
+        else if (other.transform.tag == "wall")
+        {
+            Destroy(this.gameObject);
+            Instantiate(explosion, transform.position, transform.rotation);
+        }
     }
 }
