@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject animator;
     public Text roundNumber;
     private bool isTeleporting = false;
+    public Animator deathAnimator;
+    public bool dead = false;
+    public bool fading = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +28,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        LookAtCamera();
+        if (!dead)
+        {
+            Movement();
+            LookAtCamera();
+        }
+        else if(!fading)
+        {
+            fading = true;
+            deathAnimator.SetTrigger("FadeIn");
+        }
+        
     }
 
     // See Order of Execution for Event Functions for information on FixedUpdate() and Update() related to physics queries

@@ -22,6 +22,10 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.player.GetComponent<PlayerMovement>().dead)
+        {
+            Destroy(this.gameObject);
+        }
         Movement();
     }
 

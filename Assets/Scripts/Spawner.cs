@@ -20,7 +20,11 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnEnemy();
+        if (!GameManager.instance.player.GetComponent<PlayerMovement>().dead)
+        {
+            SpawnEnemy();
+        }
+        
     }
 
     private void SpawnEnemy()

@@ -29,9 +29,12 @@ public class DungeonGenerator : MonoBehaviour {
 
     List<Cell> board;
 
+    public GameObject panel;
+
     // Start is called before the first frame update
     void Start()
     {
+        panel.SetActive(false);
         roundNumber.text = "Round " + MainMenu.currentRound;
         if (MainMenu.size != 10 && MainMenu.density != 0.8f)
         {

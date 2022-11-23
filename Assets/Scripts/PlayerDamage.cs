@@ -47,8 +47,8 @@ public class PlayerDamage : MonoBehaviour
             {
                 //GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
                 //Destroy(effect, 1.0f);
-                
-                Destroy(this.gameObject);
+
+                GameManager.instance.player.GetComponent<PlayerMovement>().dead = true;
             }
         }
         
