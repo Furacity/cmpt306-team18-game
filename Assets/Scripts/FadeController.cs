@@ -19,6 +19,13 @@ public class FadeController : MonoBehaviour
 
     void OnFadeOutEnded()
     {
-        controller.GetComponent<MainMenu>().OnFadeComplete();
+        if (CompareTag("menufader"))
+        {
+            controller.GetComponent<MainMenu>().OnFadeComplete();
+        } else if (CompareTag("ingamefader"))
+        {
+            controller.GetComponent<DungeonGenerator>().ReloadScene();
+        }
+        
     }
 }

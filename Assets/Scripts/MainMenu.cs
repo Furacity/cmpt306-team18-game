@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     static public int difficulty { get; set; }
     static public int density { get; set; }
     static public int size { get; set; }
+    static public int currentRound { get; set; }
 
     public GameObject mutatorCanvasHolder;
     public GameObject gameSettingsCanvasHolder;
@@ -28,6 +29,7 @@ public class MainMenu : MonoBehaviour
         difficulty = 1;
         density = 2;
         size = 10;
+        currentRound = 1;
         mutatorCanvasHolder.SetActive(false);
         gameSettingsCanvasHolder.SetActive(false);
         normal.GetComponent<Image>().color = new Color(0.5424528f, 0.7658292f, 1.0f);

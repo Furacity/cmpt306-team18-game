@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DungeonGenerator : MonoBehaviour {
@@ -21,6 +22,7 @@ public class DungeonGenerator : MonoBehaviour {
     public int startPos = 0;
     [Header("Void Spaces are based on the size of the grid, but if multiplied by this factor can\nbe altered to create more or less. By default 20% of cells will be blank.")]
     public float blankCellFactor = 0.8f;
+    public Text roundNumber;
 
     public GameObject[] rooms;
     public Vector2 offset;
@@ -30,6 +32,7 @@ public class DungeonGenerator : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
+        roundNumber.text = "Round " + MainMenu.currentRound;
         if (MainMenu.size != 10 && MainMenu.density != 0.8f)
         {
             size = new Vector2(MainMenu.size, MainMenu.size);
@@ -231,7 +234,7 @@ public class DungeonGenerator : MonoBehaviour {
         }
         if(GetOpenings(board[0].status) == 0)
         {
-            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+            ReloadScene();
         }
         PlacePortal();
         PlaceShop();
@@ -322,5 +325,10 @@ public class DungeonGenerator : MonoBehaviour {
             endRooms.Pop();
         }
         board[endRooms.Pop()].hasPortal = true;
+    }
+
+    public void ReloadScene()
+    {
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
 }

@@ -16,6 +16,8 @@ TagManager:
   - normal
   - hard
   - wall
+  - menufader
+  - ingamefader
   layers:
   - Default
   - TransparentFX

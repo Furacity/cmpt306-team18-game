@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
@@ -12,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 mouse_pos;
     private Vector3 object_pos;
     private float angle;
+    public GameObject animator;
+    public Text roundNumber;
+    private bool isTeleporting = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,8 +43,11 @@ public class PlayerMovement : MonoBehaviour
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1.15f))
         {
-            if (hit.collider.gameObject.CompareTag("Portal")){
-                ReloadScene();
+            if (!isTeleporting && hit.collider.gameObject.CompareTag("Portal")){
+                isTeleporting = true;
+                MainMenu.currentRound++;
+                roundNumber.text = "Round " + MainMenu.currentRound;
+                animator.GetComponent<Animator>().SetTrigger("FadeOut");
             }
             //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
             //Debug.Log(hit.collider.gameObject.name);
