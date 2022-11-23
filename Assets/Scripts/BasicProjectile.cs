@@ -28,6 +28,7 @@ public class BasicProjectile : MonoBehaviour
     {
         if (other.transform.tag == "Enemy")
         {
+            MainMenu.currency++;
             other.GetComponent<EnemyController>().TakeDamage(GameManager.instance.player.transform.GetChild(2).gameObject.GetComponent<PlayerAbilities>().GetDamage());
             Destroy(this.gameObject);
         }

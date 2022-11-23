@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
     static public int size { get; set; }
     static public int currentRound { get; set; }
 
+    static public int currency { get; set; }
+
     public GameObject mutatorCanvasHolder;
     public GameObject gameSettingsCanvasHolder;
     public Canvas mutators;
@@ -30,6 +32,7 @@ public class MainMenu : MonoBehaviour
         density = 2;
         size = 10;
         currentRound = 1;
+        currency = 0;
         mutatorCanvasHolder.SetActive(false);
         gameSettingsCanvasHolder.SetActive(false);
         normal.GetComponent<Image>().color = new Color(0.5424528f, 0.7658292f, 1.0f);
