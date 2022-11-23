@@ -11,6 +11,7 @@ public class PlayerAbilities : MonoBehaviour
     [SerializeField] private float fireTime;
     [SerializeField] private bool allowFire;
     [SerializeField] public float damage = 30.0f;
+
     private float remainingBuffTime = 0.0f;
     private Vector3 mouse_pos;
     private Vector3 object_pos;
@@ -47,6 +48,7 @@ public class PlayerAbilities : MonoBehaviour
             fireTime = Time.time + basicFireRate;
         }
     }
+
     public float GetDamage(){
         return this.damage;
     }

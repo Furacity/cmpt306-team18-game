@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1069,6 +1069,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894643316}
   m_CullTransparentMesh: 1
+--- !u!1 &934128235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 383176331, guid: 3f1f96ec26c456b4d8bec7c21e44ecd1, type: 3}
+  m_PrefabInstance: {fileID: 1148197321623841222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &934128238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934128235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5775ed483773b4426a21bcc459e9ed11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pellet: {fileID: 7840586543686240434, guid: 22397d1ce297545bb8375951f5a552e9, type: 3}
+  pelletCount: 100
+  spreadAngle: 8
+  basicFireRate: 0.5
+  fireTime: 0
+  allowFire: 0
+  damage: 100
+  pelletFireVel: 100
+--- !u!114 &934128239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934128235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e09fd517d79e4bfc86ee3358ebac080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missile: {fileID: 5252431711982598510, guid: 959efd5945af14fa3b5efa5f9c25f943, type: 3}
+  basicFireRate: 0.5
+  fireTime: 0
+  allowFire: 0
+  damage: 100
+--- !u!114 &934128240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934128235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14b4dc728da964f469f875544d762a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicProjectile: {fileID: 6002041987660410235, guid: e6bc0e65f90c34dd0b82095b4d1b56c4, type: 3}
+  basicFireRate: 0.5
+  fireTime: 0
+  damage: 50
+  magazine: 50
+  spreadAngle: 5
 --- !u!1 &936698516
 GameObject:
   m_ObjectHideFlags: 0
