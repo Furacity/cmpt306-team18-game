@@ -36,6 +36,7 @@ public class Shotgun : MonoBehaviour
             for (int i = 0; i < pelletCount; i++)
             {
                 GameObject p = Instantiate(pellet, transform.position, transform.rotation);
+                GetComponent<WeaponSounds>().OnShotgunShot();
                 p.transform.Rotate(Vector3.up * Random.Range(-spreadAngle / 2, spreadAngle / 2));
                 p.GetComponent<Rigidbody>().AddForce(p.transform.right * pelletFireVel);
                 fireTime = Time.time + basicFireRate;

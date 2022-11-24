@@ -26,6 +26,7 @@ public class RocketLauncher : MonoBehaviour
         if (Input.GetKeyDown("space") && Time.time > fireTime)
         {
             Instantiate(missile, transform.position, transform.rotation);
+            GetComponent<WeaponSounds>().OnRocketShot();
             fireTime = Time.time + basicFireRate;
         }
     }

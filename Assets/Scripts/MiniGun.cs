@@ -30,6 +30,7 @@ public class MiniGun : MonoBehaviour
             while (i < magazine)
             {
                 GameObject bullet = Instantiate(basicProjectile, transform.position, transform.rotation);
+                GetComponent<WeaponSounds>().OnMinigunShot();
                 bullet.transform.Rotate(Vector3.up * Random.Range(-spreadAngle, spreadAngle));
                 yield return new WaitForSeconds(0.1f);
                 i++;

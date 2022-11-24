@@ -45,6 +45,7 @@ public class PlayerAbilities : MonoBehaviour
         if (Input.GetMouseButton(0) && Time.time > fireTime)
         {
             Instantiate(basicProjectile, transform.position, transform.rotation);
+            GetComponent<WeaponSounds>().OnBasicShot();
             fireTime = Time.time + basicFireRate;
         }
     }
