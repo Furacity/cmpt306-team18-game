@@ -1715,7 +1715,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6659853648f023441aacdc09b63e5fd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1798,6 +1798,10 @@ MonoBehaviour:
   contactDamageTime: 0
   seekDistance: 25
   rb: {fileID: 184911734876114293}
+  healthRenderers:
+  - {fileID: 184911734876114288}
+  currentDissolve: -1
+  playerMesh: {fileID: 0}
   deathEffect: {fileID: 0}
   itemDrop:
   - {fileID: 2505258428183197192, guid: ed0b145467f64ae4abc6914c23550f7c, type: 3}
