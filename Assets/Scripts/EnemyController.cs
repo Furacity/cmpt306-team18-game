@@ -81,6 +81,7 @@ public class EnemyController : MonoBehaviour
             isDead = true;
             Destroy(GetComponent<Rigidbody>());
             Destroy(GetComponent<BoxCollider>());
+            GameManager.instance.addCoins(1);
             //Destroy(this.gameObject);
 
             //GameObject drop = Instantiate(itemDrop, transform.position, Quaternion.identity);

@@ -47,6 +47,7 @@ public class PlayerDamage : MonoBehaviour
             {
                 //GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
                 Destroy(GetComponent<Rigidbody>());
+                MainMenu.currency = 0;
                 GameManager.instance.player.GetComponent<PlayerMovement>().dead = true;
                 GameManager.instance.player.GetComponent<PlayerMovement>().endDissolve = 1.0f;
             }
