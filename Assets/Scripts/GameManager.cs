@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private int coins = 0;
+    public int coins = 0;
     public static GameManager instance = null;
     public GameObject player;
     public GameObject levelManager;

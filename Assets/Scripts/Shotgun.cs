@@ -7,7 +7,7 @@ public class Shotgun : MonoBehaviour
     [SerializeField] private GameObject pellet;
     public int pelletCount;
     public float spreadAngle;
-    [SerializeField] private float basicFireRate = 0.5f;
+    [SerializeField] public float basicFireRate = 0.5f;
     [SerializeField] private float fireTime;
     [SerializeField] private bool allowFire;
     [SerializeField] public float damage = 50.0f;
