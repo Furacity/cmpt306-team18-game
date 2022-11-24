@@ -3174,7 +3174,7 @@ MonoBehaviour:
   easy: {fileID: 0}
   normal: {fileID: 0}
   hard: {fileID: 0}
-  CanvasController: {fileID: 0}
+  CanvasController: {fileID: 197453490}
   valueText: {fileID: 0}
 --- !u!1 &953021270
 GameObject:
