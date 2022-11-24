@@ -46,9 +46,9 @@ public class PlayerDamage : MonoBehaviour
             if (health <= 0.0f)
             {
                 //GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
-                //Destroy(effect, 1.0f);
-
+                Destroy(GetComponent<Rigidbody>());
                 GameManager.instance.player.GetComponent<PlayerMovement>().dead = true;
+                GameManager.instance.player.GetComponent<PlayerMovement>().endDissolve = 1.0f;
             }
         }
         

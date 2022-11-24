@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     public Animator deathAnimator;
     public bool dead = false;
     public bool fading = false;
+    [SerializeField] private Renderer[] healthRenderers = new Renderer[0];
+    private float currentDissolve = -1.0f;
+    public float endDissolve = -1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +41,16 @@ public class PlayerMovement : MonoBehaviour
             fading = true;
             deathAnimator.SetTrigger("FadeIn");
         }
-        
+        else
+        {
+            currentDissolve = Mathf.Lerp(currentDissolve, endDissolve, 2f * Time.deltaTime);
+
+            foreach (Renderer renderer in healthRenderers)
+            {
+                renderer.material.SetFloat("_CurrentTime", currentDissolve);
+            }
+        }
+
     }
 
     // See Order of Execution for Event Functions for information on FixedUpdate() and Update() related to physics queries
