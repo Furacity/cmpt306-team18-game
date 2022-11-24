@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6659853648f023441aacdc09b63e5fd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.2544212, z: 1}
+  m_Center: {x: 0, y: 0.12721062, z: 0}
 --- !u!54 &3286033779528217323
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -133,6 +133,9 @@ MonoBehaviour:
   damageRate: 0.2
   damageTime: 0
   rb: {fileID: 3286033779528217323}
+  healthRenderers:
+  - {fileID: 3286033779528217325}
+  currentDissolve: -1
   deathEffect: {fileID: 0}
   itemDrop:
   - {fileID: 2505258428183197192, guid: ed0b145467f64ae4abc6914c23550f7c, type: 3}

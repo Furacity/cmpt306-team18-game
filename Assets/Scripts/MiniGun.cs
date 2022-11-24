@@ -5,7 +5,7 @@ using UnityEngine;
 public class MiniGun : MonoBehaviour
 {
     [SerializeField] private GameObject basicProjectile;
-    [SerializeField] private float basicFireRate = 0.5f;
+    [SerializeField] public float basicFireRate = 0.5f;
     [SerializeField] private float fireTime;
     [SerializeField] public float damage = 50.0f;
     [SerializeField] public int magazine = 50;

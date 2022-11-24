@@ -7,7 +7,7 @@ public class PlayerAbilities : MonoBehaviour
 {
 
     [SerializeField] private GameObject basicProjectile;
-    [SerializeField] private float basicFireRate = 0.5f;
+    [SerializeField] public float basicFireRate = 0.5f;
     [SerializeField] private float fireTime;
     [SerializeField] private bool allowFire;
     [SerializeField] public float damage = 30.0f;

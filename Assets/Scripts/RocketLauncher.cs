@@ -5,7 +5,7 @@ using UnityEngine;
 public class RocketLauncher : MonoBehaviour
 {
     [SerializeField] private GameObject missile;
-    [SerializeField] private float basicFireRate = 0.5f;
+    [SerializeField] public float basicFireRate = 0.5f;
     [SerializeField] private float fireTime;
     [SerializeField] private bool allowFire;
     [SerializeField] public float damage = 500.0f;

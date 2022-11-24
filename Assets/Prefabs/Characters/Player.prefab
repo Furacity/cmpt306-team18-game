@@ -177,7 +177,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 71511d63df52701448081a112a09f280, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -244,6 +244,15 @@ MonoBehaviour:
   moveSpeed: 15
   rotationTarget: {fileID: 1148197320565682214}
   rb: {fileID: 1148197320416403231}
+  animator: {fileID: 0}
+  roundNumber: {fileID: 0}
+  deathAnimator: {fileID: 0}
+  dead: 0
+  fading: 0
+  healthRenderers:
+  - {fileID: 1148197320565682211}
+  - {fileID: 4400633040499156439}
+  endDissolve: -1
 --- !u!114 &-5220116701997603317
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private int coins = 0;
+    public int coins = 0;
     public static GameManager instance = null;
     public GameObject player;
     public GameObject levelManager;
+    public Text currencyText;
+    public Text deathCurrencyText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        currencyText.text = "Currency: " + MainMenu.currency;
+        deathCurrencyText.text = "Currency: " + MainMenu.currency;
     }
 
     // Update is called once per frame
@@ -34,6 +38,8 @@ public class GameManager : MonoBehaviour
     }
     public void addCoins(int value)
     {
-        this.coins++;
+        MainMenu.currency += value;
+        currencyText.text = "Currency: " + MainMenu.currency;
+        deathCurrencyText.text = "Currency: " + MainMenu.currency;
     }
 }
