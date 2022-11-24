@@ -44,6 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a947b057abc57c44bd5798669f11737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3286033779528217320, guid: 1a9b51efa8e7b594982d58df6d1fbb4f, type: 3}
+  enemyPrefab1: {fileID: 3286033779528217320, guid: f1177de68819c5d429d16038c45167f2, type: 3}
+  prefab1ProbabilityWeight: 30
+  enemyPrefab2: {fileID: 5951217562458255417, guid: 7492654ccf23f2449a0f1ece03ea6fe7, type: 3}
+  prefab2ProbabilityWeight: 40
+  enemyPrefab3: {fileID: 184911734876114295, guid: 68efca632e8c1324eb8812bc13455dad, type: 3}
+  prefab3ProbabilityWeight: 15
+  enemyPrefab4: {fileID: 4382784687466027178, guid: cd3a522a2dfc4f14eaf7a531b617da31, type: 3}
+  prefab4ProbabilityWeight: 15
+  bosses:
+  - {fileID: 3328159351564808339, guid: afec1bb21e4a98049aad34c01c8904cf, type: 3}
+  - {fileID: 5243192531083003192, guid: 41fd2847d4a02564c985204553c2ac8c, type: 3}
+  - {fileID: 8600370256410479239, guid: 1b8ae8900e6165a4a9df6ce92274dcdf, type: 3}
+  - {fileID: 6494312958705831167, guid: 14e1768a01a74c8468e73cc55762457e, type: 3}
   spawningAllowed: 1
   spawnRate: 8

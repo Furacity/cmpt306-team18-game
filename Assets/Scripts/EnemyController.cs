@@ -8,9 +8,19 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float moveSpeed = 15.0f;
     [SerializeField] private float health = 100.0f;
 
-    [SerializeField] private float damageToPlayer = 20.0f;
-    [SerializeField] private float damageRate = 0.2f;
-    [SerializeField] private float damageTime;
+    [SerializeField] private bool ranged = false;
+    [SerializeField] private GameObject enemyProjectile;
+    [SerializeField] private float projectileFireRate = 0.5f;
+    [SerializeField] private float projectileRange = 20f;
+
+    private float rangedFireTime;
+
+
+    [SerializeField] private float contactDamageToPlayer = 20.0f;
+    [SerializeField] private float contactDamageRate = 0.2f;
+    [SerializeField] private float contactDamageTime;
+    [SerializeField] private float seekDistance = 20f;
+
     [SerializeField] Rigidbody rb;
 
     public GameObject deathEffect;
@@ -26,21 +36,37 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        if (ranged) {        
+            if (Vector3.Distance(transform.position, GameManager.instance.player.transform.position) < projectileRange) {
+                RangedAttack();
+            }
+        }
+
         Movement();
     }
 
+
     private void Movement()
     {
-
-        if (GameManager.instance.player)
+    if (GameManager.instance.player)
         { //null reference check
             transform.LookAt(GameManager.instance.player.transform.position); //Look at the player
-            transform.position += transform.forward * moveSpeed * Time.deltaTime;
 
-            //var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            //rb.velocity = dir * moveSpeed;
+            if (Vector3.Distance(transform.position, GameManager.instance.player.transform.position) < seekDistance) {
+                transform.position += transform.forward * moveSpeed * Time.deltaTime;
+            }
         }
 
+    }
+
+
+    private void RangedAttack()
+    {
+        if (Time.time > rangedFireTime) {
+            GameObject projectile = Instantiate(enemyProjectile, transform.position, transform.rotation);
+            rangedFireTime = Time.time + projectileFireRate;
+        }
     }
 
 
@@ -71,10 +97,10 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.transform.tag == "Player" && Time.time > damageTime && other is CapsuleCollider)
+        if (other.transform.tag == "Player" && Time.time > contactDamageTime && other is CapsuleCollider)
         {
-            other.transform.GetComponent<PlayerDamage>().TakeDamage(damageToPlayer);
-            damageTime = Time.time + damageRate;
+            other.transform.GetComponent<PlayerDamage>().TakeDamage(contactDamageToPlayer);
+            contactDamageTime = Time.time + contactDamageRate;
         }
 
     }
