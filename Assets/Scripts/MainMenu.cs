@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
 
     public GameObject mutatorCanvasHolder;
     public GameObject gameSettingsCanvasHolder;
+    public GameObject mainMenuCanvasHolder;
     public Canvas mutators;
     public Canvas play;
     public Button normal;
@@ -72,6 +73,16 @@ public class MainMenu : MonoBehaviour
     public void HideGameSettingsCanvas()
     {
         gameSettingsCanvasHolder.SetActive(false);
+    }
+
+    public void HideMainMenuCanvas()
+    {
+        mainMenuCanvasHolder.SetActive(false);
+    }
+
+    public void ShowMainMenuCanvas()
+    {
+        mainMenuCanvasHolder.SetActive(true);
     }
 
     public void ShowGameSettingsCanvas()

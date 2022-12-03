@@ -87,6 +87,7 @@
     <Compile Include="Assets\Addons\Ultimate 10 Plus Shaders\Scripts\U10PS_MouseRotation.cs" />
     <Compile Include="Assets\Scripts\RocketLauncherMissile.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\WeaponSounds.cs" />
     <Compile Include="Assets\Scripts\EnemyProjectileDestruct.cs" />
     <Compile Include="Assets\Addons\Cool Visual Effects - Part 1\Scripts\EffectManager.cs" />
     <Compile Include="Assets\Scripts\EnemyProjectile.cs" />
@@ -96,7 +97,6 @@
     <Compile Include="Assets\Scripts\HealthPack.cs" />
     <Compile Include="Assets\Scripts\MutatorSingleton.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
-    <Compile Include="Assets\Scripts\WeaponSounds.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Edge Detection.shader" />

@@ -38,24 +38,28 @@ public class MainMenuInteractables : MonoBehaviour
     public void OnMutatorsButtonPressed()
     {
         CanvasController.GetComponent<MainMenu>().ShowMutatorCanvas();
+        CanvasController.GetComponent<MainMenu>().HideGameSettingsCanvas();
         CanvasController.GetComponent<MainMenu>().PlayButtonForward();
     }
 
     public void OnPlayButtonPressed()
     {
         CanvasController.GetComponent<MainMenu>().ShowGameSettingsCanvas();
+        CanvasController.GetComponent<MainMenu>().HideMainMenuCanvas();
         CanvasController.GetComponent<MainMenu>().PlayButtonForward();
     }
 
     public void OnMainMenuButtonPressed()
     {
         CanvasController.GetComponent<MainMenu>().HideGameSettingsCanvas();
+        CanvasController.GetComponent<MainMenu>().ShowMainMenuCanvas();
         CanvasController.GetComponent<MainMenu>().PlayButtonBack();
     }
 
     public void OnMutatorConfirmButtonPressed()
     {
         CanvasController.GetComponent<MainMenu>().HideMutatorCanvas();
+        CanvasController.GetComponent<MainMenu>().ShowGameSettingsCanvas();
         CanvasController.GetComponent<MainMenu>().PlayButtonBack();
     }
     public void OnStartButtonPressed()
