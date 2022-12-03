@@ -22,6 +22,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Renderer[] healthRenderers = new Renderer[0];
     private float currentDissolve = -1.0f;
     public float endDissolve = -1.0f;
+    public float dashSpeed = 15;
+    private float dashTime = 0;
+    private float dashMultiplier = 1;
+    private float dashCooldown = 1.5f;
+    private bool dashing = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +55,17 @@ public class PlayerMovement : MonoBehaviour
                 renderer.material.SetFloat("_CurrentTime", currentDissolve);
             }
         }
+        if (Time.time > dashTime && Input.GetKey(KeyCode.LeftShift))
+        {
+            dashing = true;
+            dashMultiplier = dashSpeed;
+            dashTime = Time.time + dashCooldown;
+        }
+        if (dashing)
+        {
+            dashing = false;
+            dashMultiplier = 1;
+        }
 
     }
 
@@ -70,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
             if (!isTeleporting && hit.collider.gameObject.CompareTag("Portal")){
                 isTeleporting = true;
                 MainMenu.currentRound++;
+                MainMenu.roundsUntilGrow--;
                 roundNumber.text = "Round " + MainMenu.currentRound;
                 animator.GetComponent<Animator>().SetTrigger("FadeOut");
             }
@@ -105,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
         }
         */
-        rb.velocity = dir * moveSpeed;
+        rb.velocity = dir * moveSpeed * dashMultiplier;
     }
 
     private void LookAtCamera()

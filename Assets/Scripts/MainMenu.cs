@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
     static public int size { get; set; }
     static public int currentRound { get; set; }
 
+    static public int roundsUntilGrow { get; set; }
+
     static public int currency { get; set; }
 
     public GameObject mutatorCanvasHolder;
@@ -26,6 +28,8 @@ public class MainMenu : MonoBehaviour
     public GameObject fadepanel;
     public Animator animator;
 
+    private bool mutator = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +38,7 @@ public class MainMenu : MonoBehaviour
         size = 10;
         currentRound = 1;
         currency = 0;
+        roundsUntilGrow = -1;
         mutatorCanvasHolder.SetActive(false);
         gameSettingsCanvasHolder.SetActive(false);
         normal.GetComponent<Image>().color = new Color(0.5424528f, 0.7658292f, 1.0f);
@@ -72,6 +77,7 @@ public class MainMenu : MonoBehaviour
 
     public void HideGameSettingsCanvas()
     {
+        mutator = false;
         gameSettingsCanvasHolder.SetActive(false);
     }
 
@@ -87,11 +93,19 @@ public class MainMenu : MonoBehaviour
 
     public void ShowGameSettingsCanvas()
     {
+        mutator = true;
         gameSettingsCanvasHolder.SetActive(true);
     }
 
     public void StartGame()
     {
+        if (!mutator)
+        {
+            difficulty = 1;
+            density = 2;
+            size = 3;
+            roundsUntilGrow = 5;
+        }
         animator.SetTrigger("FadeOut");
         
     }

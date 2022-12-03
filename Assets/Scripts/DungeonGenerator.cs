@@ -34,6 +34,11 @@ public class DungeonGenerator : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
+        if(MainMenu.roundsUntilGrow == 0)
+        {
+            MainMenu.roundsUntilGrow = 5;
+            MainMenu.size++;
+        }
         panel.SetActive(false);
         roundNumber.text = "Round " + MainMenu.currentRound;
         if (MainMenu.size != 10 && MainMenu.density != 0.8f)
@@ -299,13 +304,16 @@ public class DungeonGenerator : MonoBehaviour {
                 }
             }
         }
-
-        int popUntil = Random.Range(1, endRooms.Count);
-        for(int k = endRooms.Count; k == popUntil; k--)
-        {
-            endRooms.Pop();
+        if(endRooms.Count > 0) { 
+            int popUntil = Random.Range(1, endRooms.Count);
+            for(int k = endRooms.Count; k == popUntil; k--)
+            {
+                endRooms.Pop();
+            }
+            if(endRooms.Count > 0) { 
+                board[endRooms.Pop()].hasShop = true;
+            }
         }
-        board[endRooms.Pop()].hasShop = true;
     }
 
     void PlacePortal()
