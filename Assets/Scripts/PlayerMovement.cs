@@ -22,11 +22,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Renderer[] healthRenderers = new Renderer[0];
     private float currentDissolve = -1.0f;
     public float endDissolve = -1.0f;
-    public float dashSpeed = 15;
-    private float dashTime = 0;
+    public float dashSpeed = 25;
+    private float dashCooldownTime = 0;
     private float dashMultiplier = 1;
     private float dashCooldown = 1.5f;
-    private bool dashing = false;
+    private float dashDuration = .1f;
+    private float dashDurationTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,15 +56,14 @@ public class PlayerMovement : MonoBehaviour
                 renderer.material.SetFloat("_CurrentTime", currentDissolve);
             }
         }
-        if (Time.time > dashTime && Input.GetKey(KeyCode.LeftShift))
+        if (Time.time > dashCooldownTime && Input.GetKey(KeyCode.LeftShift))
         {
-            dashing = true;
             dashMultiplier = dashSpeed;
-            dashTime = Time.time + dashCooldown;
+            dashCooldownTime = Time.time + dashCooldown;
+            dashDurationTime = Time.time + dashDuration;
         }
-        if (dashing)
+        if (Time.time > dashDurationTime)
         {
-            dashing = false;
             dashMultiplier = 1;
         }
 
