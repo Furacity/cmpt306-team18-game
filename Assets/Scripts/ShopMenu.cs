@@ -26,7 +26,7 @@ public class ShopMenu : MonoBehaviour
     void Start()
     {
         Instantiate(shopMenuUI, transform);
-        shopMenuUI.SetActive(false);
+        this.shopMenuUI.SetActive(false);
         basicAttack = GameObject.Find("Gun").GetComponent<PlayerAbilities>();
         shotgun = GameObject.Find("Gun").GetComponent<Shotgun>();
         minigun = GameObject.Find("Gun").GetComponent<MiniGun>();
@@ -56,6 +56,15 @@ public class ShopMenu : MonoBehaviour
         }
     }
 
+    void OnTriggerExit(Collider other)
+    {
+        if (other.transform.tag == "Player")
+        {
+            shopInRange = false;
+            shopMenuClosed = true;
+        }
+    }
+
     private void openShop()
     {
         if (shopOpenedOnce == false)
@@ -66,13 +75,13 @@ public class ShopMenu : MonoBehaviour
         }
         Description = gameObject.GetComponent<Text>();
         perkDescription(perk);
-        shopMenuUI.SetActive(true);
+        this.shopMenuUI.SetActive(true);
     }
 
     public void exitMenu()
     {
         shopMenuClosed = true;
-        shopMenuUI.SetActive(false);
+        this.shopMenuUI.SetActive(false);
     }
 
     private void perkSelection(int perk)
@@ -159,7 +168,7 @@ public class ShopMenu : MonoBehaviour
     public void purchase()
     {
         if (GameManager.instance.coins >= price)
-        {
+        {   
             perkSelection(perk);
             GameManager.instance.coins =- price;
             //displayEffect();
