@@ -6,17 +6,17 @@ using UnityEngine.UI;
 public class ShopMenu : MonoBehaviour
 {
     public GameObject shopMenuUI;
-    public GameObject upgradeEffect;
+    // public GameObject upgradeEffect;
 
     private PlayerAbilities basicAttack;
     private Shotgun shotgun;
     private MiniGun minigun;
     private RocketLauncher rocket;
 
+    public Text Price;
     public Text Description;
 
     bool shopInRange = false;
-    bool shopMenuClosed = true;
     bool shopOpenedOnce = false;
     bool purchased = false;
 
@@ -41,10 +41,10 @@ public class ShopMenu : MonoBehaviour
             if (shopInRange == true)
             {
                 openShop();
-            }
-            if (shopMenuClosed == true)
-            {
-                shopInRange = false;
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    purchase();
+                }
             }
         }
     }
@@ -52,19 +52,18 @@ public class ShopMenu : MonoBehaviour
     // check for player in collider range
     void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "shopcollider")
         {
             shopInRange = true;
-            shopMenuClosed = false;
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "shopcollider")
         {
             shopInRange = false;
-            shopMenuClosed = true;
+            shopMenuUI.SetActive(false);
         }
     }
 
@@ -73,18 +72,13 @@ public class ShopMenu : MonoBehaviour
         if (shopOpenedOnce == false)
         {  
             perk = Random.Range(0, 9);
-            price = Random.Range(5, 25);
+            price = Random.Range(3, 6) * MainMenu.currentRound; 
             shopOpenedOnce = true;
         }
         //Description = gameObject.GetComponent<Text>();
+        Price.text = "Price: " + price.ToString();
         perkDescription(perk);
         shopMenuUI.SetActive(true);
-    }
-
-    public void exitMenu()
-    {
-        shopMenuClosed = true;
-        shopMenuUI.SetActive(false);
     }
 
     private void perkSelection(int perk)
@@ -153,7 +147,7 @@ public class ShopMenu : MonoBehaviour
                 Description.text = "Increase minigun bullet count by 5";
                 break;
             case 8:
-                Description.text = "Inrease rocket launcher damage by 100";
+                Description.text = "Increase rocket launcher damage by 100";
                 break;
             case 9:
                 Description.text = "Increase rocket launcher attack speed by 5%";
@@ -170,10 +164,11 @@ public class ShopMenu : MonoBehaviour
     // checks that the player has enough money to buy an upgrade
     public void purchase()
     {
-        if (GameManager.instance.coins >= price)
+        if (MainMenu.currency >= price)
         {   
+            shopMenuUI.SetActive(false);
             perkSelection(perk);
-            GameManager.instance.coins =- price;
+            GameManager.instance.subtractCoins(price);
             //displayEffect();
             purchased = true;
         }

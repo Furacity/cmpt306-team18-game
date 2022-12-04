@@ -42,4 +42,11 @@ public class GameManager : MonoBehaviour
         currencyText.text = "Currency: " + MainMenu.currency;
         deathCurrencyText.text = "Currency: " + MainMenu.currency;
     }
+
+    public void subtractCoins(int value)
+    {
+        MainMenu.currency -= value;
+        currencyText.text = "Currency: " + MainMenu.currency;
+        deathCurrencyText.text = "Currency: " + MainMenu.currency;
+    }
 }
