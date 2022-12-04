@@ -18,6 +18,7 @@ public class ShopMenu : MonoBehaviour
     bool shopInRange = false;
     bool shopMenuClosed = true;
     bool shopOpenedOnce = false;
+    bool purchased = false;
 
     public int perk = 0;
     public int price = 0;
@@ -25,8 +26,7 @@ public class ShopMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(shopMenuUI, transform);
-        this.shopMenuUI.SetActive(false);
+        shopMenuUI.SetActive(false);
         basicAttack = GameObject.Find("Gun").GetComponent<PlayerAbilities>();
         shotgun = GameObject.Find("Gun").GetComponent<Shotgun>();
         minigun = GameObject.Find("Gun").GetComponent<MiniGun>();
@@ -36,13 +36,16 @@ public class ShopMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (shopInRange == true)
+        if (purchased == false)
         {
-            openShop();
-        }
-        if (shopMenuClosed == true)
-        {
-            shopInRange = false;
+            if (shopInRange == true)
+            {
+                openShop();
+            }
+            if (shopMenuClosed == true)
+            {
+                shopInRange = false;
+            }
         }
     }
 
@@ -75,13 +78,13 @@ public class ShopMenu : MonoBehaviour
         }
         //Description = gameObject.GetComponent<Text>();
         perkDescription(perk);
-        this.shopMenuUI.SetActive(true);
+        shopMenuUI.SetActive(true);
     }
 
     public void exitMenu()
     {
         shopMenuClosed = true;
-        this.shopMenuUI.SetActive(false);
+        shopMenuUI.SetActive(false);
     }
 
     private void perkSelection(int perk)
@@ -172,7 +175,7 @@ public class ShopMenu : MonoBehaviour
             perkSelection(perk);
             GameManager.instance.coins =- price;
             //displayEffect();
-            Destroy(this.gameObject);
+            purchased = true;
         }
         else
         {
