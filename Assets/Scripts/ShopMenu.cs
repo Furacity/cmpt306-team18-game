@@ -13,7 +13,7 @@ public class ShopMenu : MonoBehaviour
     private MiniGun minigun;
     private RocketLauncher rocket;
 
-    private Text Description;
+    public Text Description;
 
     bool shopInRange = false;
     bool shopMenuClosed = true;
@@ -73,7 +73,7 @@ public class ShopMenu : MonoBehaviour
             price = Random.Range(5, 25);
             shopOpenedOnce = true;
         }
-        Description = gameObject.GetComponent<Text>();
+        //Description = gameObject.GetComponent<Text>();
         perkDescription(perk);
         this.shopMenuUI.SetActive(true);
     }
@@ -160,8 +160,8 @@ public class ShopMenu : MonoBehaviour
 
     public void displayEffect()
     {
-        GameObject effect = Instantiate(upgradeEffect, transform.position, transform.rotation);
-        Destroy(effect, 1.0f);
+        //GameObject effect = Instantiate(upgradeEffect, transform.position, transform.rotation);
+        //Destroy(effect, 1.0f);
     }
 
     // checks that the player has enough money to buy an upgrade

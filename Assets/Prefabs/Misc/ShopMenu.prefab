@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 997410718471167529}
   - component: {fileID: 997410718471167528}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: PerkText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopMenuUI: {fileID: 997410718472685288}
   upgradeEffect: {fileID: 0}
+  Description: {fileID: 997410718471167528}
   perk: 0
   price: 0
 --- !u!1 &997410719010803879
