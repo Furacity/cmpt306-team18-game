@@ -7,7 +7,6 @@ public class DamageBooster : MonoBehaviour
     [SerializeField] private float lifeTime = 5.0f;
     [SerializeField] private float rotateSpeed = 270.0f;
     [SerializeField] private float speed = 10.0f;
-
     void Start()
     {
         Destroy(this.gameObject, lifeTime);
@@ -21,6 +20,7 @@ public class DamageBooster : MonoBehaviour
         
         if(other.transform.tag == "Player" && other is CapsuleCollider){
             GameManager.instance.player.transform.GetChild(2).gameObject.GetComponent<PlayerAbilities>().damageBuff(); //some sort of increment goes here
+            other.transform.GetComponent<PowerUpSounds>().PlaySound(1);
             Destroy(this.gameObject);
         } 
     }

@@ -22,7 +22,7 @@ public class HealthPack : MonoBehaviour
         
         if(other.transform.tag == "Player" && other is CapsuleCollider){
             other.transform.GetComponent<PlayerDamage>().RefillHealth(value); //some sort of increment goes here
-            
+            other.transform.GetComponent<PowerUpSounds>().PlaySound(0);
             Destroy(this.gameObject);
         } 
     }

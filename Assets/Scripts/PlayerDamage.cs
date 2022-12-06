@@ -13,6 +13,7 @@ public class PlayerDamage : MonoBehaviour
     [SerializeField] private float shield = 0.0f;
     public GameObject deathEffect;
     public Image healthbar;
+    public Image depletebar;
     public Image shieldbar;
 
 
@@ -24,8 +25,13 @@ public class PlayerDamage : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    { 
+        if(healthbar.fillAmount < depletebar.fillAmount){
+            depletebar.fillAmount = Mathf.Lerp(depletebar.fillAmount, healthbar.fillAmount, 0.5f * Time.deltaTime);
+        }
+        else{
+            depletebar.fillAmount = healthbar.fillAmount;
+        }
     }
 
 

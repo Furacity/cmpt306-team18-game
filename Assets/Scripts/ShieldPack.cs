@@ -7,7 +7,6 @@ public class ShieldPack : MonoBehaviour
     [SerializeField] private float lifeTime = 5.0f;
     [SerializeField] private float rotateSpeed = 270.0f;
     [SerializeField] private float speed = 10.0f;
-
     void Start()
     {
         Destroy(this.gameObject, lifeTime);
@@ -21,6 +20,7 @@ public class ShieldPack : MonoBehaviour
         
         if(other.transform.tag == "Player" && other is CapsuleCollider){
             other.transform.GetComponent<PlayerDamage>().shieldFill(); 
+            other.transform.GetComponent<PowerUpSounds>().PlaySound(2);
             Destroy(this.gameObject);
         } 
     }
