@@ -27,7 +27,7 @@ public class PlayerDamage : MonoBehaviour
     void Update()
     { 
         if(healthbar.fillAmount < depletebar.fillAmount){
-            depletebar.fillAmount = Mathf.Lerp(depletebar.fillAmount, healthbar.fillAmount, 0.5f * Time.deltaTime);
+            depletebar.fillAmount = Mathf.Lerp(depletebar.fillAmount, healthbar.fillAmount, 2.0f * Time.deltaTime);
         }
         else{
             depletebar.fillAmount = healthbar.fillAmount;

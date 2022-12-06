@@ -6,17 +6,20 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public int coins = 0;
+    private int kills = 0;
     public static GameManager instance = null;
     public GameObject player;
     public GameObject levelManager;
     public Text currencyText;
     public Text deathCurrencyText;
+    public Text killsText;
 
     // Start is called before the first frame update
     void Start()
     {
         currencyText.text = "Currency: " + MainMenu.currency;
         deathCurrencyText.text = "Currency: " + MainMenu.currency;
+        killsText.text = "Kills: " + kills;
     }
 
     // Update is called once per frame
@@ -48,5 +51,12 @@ public class GameManager : MonoBehaviour
         MainMenu.currency -= value;
         currencyText.text = "Currency: " + MainMenu.currency;
         deathCurrencyText.text = "Currency: " + MainMenu.currency;
+    }
+    public void addKill(){
+        kills++;
+        killsText.text = "Kills: " + kills;
+    }
+    public int getKills(){
+        return kills;
     }
 }

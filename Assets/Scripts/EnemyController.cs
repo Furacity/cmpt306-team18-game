@@ -65,6 +65,7 @@ public class EnemyController : MonoBehaviour
         if(currentDissolve >= 0.7f)
         {
             Destroy(this.gameObject);
+            GameManager.instance.addKill();
         }
 
 

@@ -559,8 +559,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 110, y: 27.5}
-  m_SizeDelta: {x: 200, y: 35}
+  m_AnchoredPosition: {x: 110, y: 22.5}
+  m_SizeDelta: {x: 200, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &444612942
 MonoBehaviour:
@@ -1643,6 +1643,7 @@ MonoBehaviour:
   levelManager: {fileID: 4795666781917137058, guid: d32908881a7576e4eb97db2af90e7a9e, type: 3}
   currencyText: {fileID: 627064322}
   deathCurrencyText: {fileID: 1632665310}
+  killsText: {fileID: 1100082002}
 --- !u!1 &1000594959
 GameObject:
   m_ObjectHideFlags: 0
