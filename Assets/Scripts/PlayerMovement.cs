@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashDurationTime = 0;
     public Image dashImage;
     private float dashBarFillAmount = 0;
+    public AudioSource dashSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
             dashMultiplier = dashSpeed;
             dashCooldownTime = Time.time + dashCooldown;
             dashDurationTime = Time.time + dashDuration;
+            dashSound.Play ();
         }
         if (Time.time > dashDurationTime)
         {
