@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    static public int difficulty { get; set; }
+    static public float difficulty { get; set; }
     static public int density { get; set; }
     static public int size { get; set; }
     static public int currentRound { get; set; }
@@ -35,7 +35,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        difficulty = 1;
+        difficulty = 0.9f;
         density = 2;
         size = 10;
         currentRound = 1;

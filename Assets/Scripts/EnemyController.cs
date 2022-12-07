@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     //Default Enemy stats
     [SerializeField] private float moveSpeed = 15.0f;
+    [SerializeField] private float maxMoveSpeed = 30.0f;
     [SerializeField] private float health = 100.0f;
 
     [SerializeField] private bool ranged = false;
@@ -34,8 +35,16 @@ public class EnemyController : MonoBehaviour
 
     public AudioSource deathNoise;
 
-
-
+    void Start()
+    {
+        health = health * GameManager.instance.difficulty;
+        if(!(moveSpeed * GameManager.instance.difficulty >=  maxMoveSpeed)){
+            moveSpeed = moveSpeed * GameManager.instance.difficulty;
+        }else{
+            moveSpeed = maxMoveSpeed;
+        }
+        contactDamageToPlayer = 20.0f * GameManager.instance.difficulty;
+    }
     // Update is called once per frame
     void Update()
     {

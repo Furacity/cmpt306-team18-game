@@ -31,7 +31,7 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (other.transform.tag == "Player" && other is CapsuleCollider)
         {
-            other.transform.GetComponent<PlayerDamage>().TakeDamage(projectileDamage);
+            other.transform.GetComponent<PlayerDamage>().TakeDamage(projectileDamage*GameManager.instance.difficulty);
             Destroy(this.gameObject);
 
         }

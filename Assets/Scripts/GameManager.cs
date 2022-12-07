@@ -13,10 +13,15 @@ public class GameManager : MonoBehaviour
     public Text currencyText;
     public Text deathCurrencyText;
     public Text killsText;
+    public float difficulty;
+    [SerializeField] private float scaleTimer = 0f;
+    [SerializeField] private float scaleThresh = 5f;
+    [SerializeField] private float difficultyScalar = 0.1f;
 
     // Start is called before the first frame update
     void Start()
     {
+        difficulty = MainMenu.difficulty;
         currencyText.text = "Currency: " + MainMenu.currency;
         deathCurrencyText.text = "Currency: " + MainMenu.currency;
         killsText.text = "Kills: " + kills;
@@ -25,7 +30,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        scaleTimer += Time.deltaTime;
+        if(scaleTimer >=  scaleThresh){
+            difficulty += difficultyScalar;
+            scaleTimer = 0f;
+        }
     }
 
     void Awake()

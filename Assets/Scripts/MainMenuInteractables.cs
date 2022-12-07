@@ -21,15 +21,15 @@ public class MainMenuInteractables : MonoBehaviour
             this.GetComponent<Image>().color = new Color(0.5424528f, 0.7658292f, 1.0f);
             if (this.CompareTag("easy"))
             {
-                MainMenu.difficulty = 0;
+                MainMenu.difficulty = 0.2f;
             }
             if (this.CompareTag("normal"))
             {
-                MainMenu.difficulty = 1;
+                MainMenu.difficulty = 0.9f;
             }
             if (this.CompareTag("hard"))
             {
-                MainMenu.difficulty = 3;
+                MainMenu.difficulty = 1.9f;
             }
             
         }
