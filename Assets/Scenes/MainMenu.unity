@@ -8724,10 +8724,14 @@ MonoBehaviour:
   musicSlider: {fileID: 1857986242}
   SFXSlider: {fileID: 995897078}
   UISlider: {fileID: 812123680}
+  masterLabel: {fileID: 1848051999}
+  musicLabel: {fileID: 1883276609}
+  SFXLabel: {fileID: 14424577}
+  UILabel: {fileID: 1770674146}
   buttonForward: {fileID: 1619790455}
   buttonBack: {fileID: 540672559}
   sliderChange: {fileID: 1850890596}
-  mainMenuCanvas: {fileID: 0}
+  mainMenuCanvas: {fileID: 1618695643}
 --- !u!1 &1883276607
 GameObject:
   m_ObjectHideFlags: 0
