@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour
 
 
     public bool spawningAllowed = false;
-    public float spawnRate = 2.0f;
+    static public float spawnRate = 2.0f;
     private float spawnTimer;
     private bool bossSpawned = false;
 
@@ -92,5 +92,10 @@ public class Spawner : MonoBehaviour
             }
 
         }
+    }
+
+    public void IncreaseSpawnRate()
+    {
+        spawnRate *= 3.0f;
     }
 }

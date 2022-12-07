@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -604,18 +604,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 403856689549766892, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
-      propertyPath: OutputAudioMixerGroup
+    - target: {fileID: 1208497875, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+      propertyPath: chargePortalText
       value: 
-      objectReference: {fileID: -6513052808150537310, guid: c9e211a0f45b2f946aa5973d344eb97c, type: 2}
-    - target: {fileID: 1066130244294266174, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
-      propertyPath: OutputAudioMixerGroup
+      objectReference: {fileID: 6696018069136589355}
+    - target: {fileID: 1208497875, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+      propertyPath: currentObjectiveText
       value: 
-      objectReference: {fileID: -6513052808150537310, guid: c9e211a0f45b2f946aa5973d344eb97c, type: 2}
-    - target: {fileID: 1165357141046569109, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -6513052808150537310, guid: c9e211a0f45b2f946aa5973d344eb97c, type: 2}
+      objectReference: {fileID: 6696018069136589356}
+    - target: {fileID: 1280487736, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+      propertyPath: m_Text
+      value: 'Objective:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631958461, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2251691
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631958461, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2251691
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631958461, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8679245
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106505259, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106505259, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 169
+      objectReference: {fileID: 0}
     - target: {fileID: 6696018067934906152, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
       propertyPath: controller
       value: 
@@ -670,3 +690,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+--- !u!114 &6696018069136589355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1631958461, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+  m_PrefabInstance: {fileID: 6696018069136589354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6696018069136589356 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2106505260, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+  m_PrefabInstance: {fileID: 6696018069136589354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         if (dashImage.fillAmount != 1)
         {
             dashBarFillAmount = Mathf.Lerp(dashBarFillAmount, 1.48f, (dashCooldownTime - Time.time) * Time.deltaTime);
-            Debug.Log(dashBarFillAmount);
+            
             dashImage.fillAmount = dashBarFillAmount;
         }
 

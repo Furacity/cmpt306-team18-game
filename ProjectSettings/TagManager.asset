@@ -20,6 +20,8 @@ TagManager:
   - ingamefader
   - shopcollider
   - bubble
+  - chargePortalCollider
+  - blockPlayerCollider
   layers:
   - Default
   - TransparentFX
