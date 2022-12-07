@@ -191,6 +191,7 @@ MonoBehaviour:
   - {fileID: 3798248668938099767, guid: e1f1c42c01953a54f9b286519aa7f9e5, type: 3}
   - {fileID: 8006227076792493406, guid: 82acad344ee7d5646b7da9e57d84d185, type: 3}
   offset: {x: 54, y: 54}
+  wallTops: {fileID: 2100000, guid: 18894e7124c226543a01412e2a63d487, type: 2}
   panel: {fileID: 1000594959}
 --- !u!1 &990035587
 GameObject:
@@ -381,6 +382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2066066072}
   - component: {fileID: 2066066071}
+  - component: {fileID: 2066066073}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -397,7 +399,7 @@ AudioSource:
   m_GameObject: {fileID: 2066066070}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3605725230719799050, guid: c9e211a0f45b2f946aa5973d344eb97c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 65f1b47b349bc004596b71b87ad6ac8d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -499,6 +501,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2066066073
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066066070}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6513052808150537310, guid: c9e211a0f45b2f946aa5973d344eb97c, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 73232145edbf2a64f85a03f70c138d9b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 0
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &6696018069136589354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -506,6 +604,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 403856689549766892, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6513052808150537310, guid: c9e211a0f45b2f946aa5973d344eb97c, type: 2}
+    - target: {fileID: 1066130244294266174, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6513052808150537310, guid: c9e211a0f45b2f946aa5973d344eb97c, type: 2}
+    - target: {fileID: 1165357141046569109, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6513052808150537310, guid: c9e211a0f45b2f946aa5973d344eb97c, type: 2}
     - target: {fileID: 6696018067934906152, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
       propertyPath: controller
       value: 

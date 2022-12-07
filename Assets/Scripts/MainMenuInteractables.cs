@@ -82,6 +82,13 @@ public class MainMenuInteractables : MonoBehaviour
         valueText.text = MainMenu.size + " x " + MainMenu.size;
     }
 
+    public void OnSettingButtonPressed()
+    {
+        CanvasController.GetComponent<MainMenu>().ShowSettingsCanvas();
+        CanvasController.GetComponent<MainMenu>().HideMainMenuCanvas();
+        CanvasController.GetComponent<MainMenu>().PlayButtonForward();
+    }
+
     public void OnExitToDesktopPressed()
     {
         CanvasController.GetComponent<MainMenu>().PlayButtonBack();

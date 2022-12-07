@@ -16,6 +16,26 @@ public class DungeonGenerator : MonoBehaviour {
         public bool spawnersActive = false;
     }
 
+    public class RandColor
+    {
+        private Color[] colors = {new Color(0.1351845f, 1.844303f, 1.834647f),
+            new Color(0.05907169f, 2.020935f, 0f),
+            new Color(1.679953f, 1.646432f, 0f),
+            new Color(1.679954f, 0.06381499f, 0f),
+            new Color(1.619822f, 0f, 1.679954f),
+            new Color(0f, 0.0709799f, 1.679954f),
+            new Color(0f, 1.679954f, 0.6087508f),
+            new Color(1.679954f, 0.4891436f, 0f),
+            new Color(1.679954f, 0f, 0.463789f)};
+        public Color color;
+
+        public RandColor()
+        {
+            int randInt = Random.Range(0, colors.Length);
+            color = colors[randInt];
+        }
+    }
+
     public Vector2 size;
     [Header("Check if you want to start in the middle of the grid, else it will start at the given position")]
     public bool startAtCentre = false;
@@ -26,6 +46,7 @@ public class DungeonGenerator : MonoBehaviour {
 
     public GameObject[] rooms;
     public Vector2 offset;
+    public Material wallTops;
 
     List<Cell> board;
 
@@ -34,7 +55,10 @@ public class DungeonGenerator : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-        if(MainMenu.roundsUntilGrow == 0)
+        RandColor levelColor = new();
+        wallTops.SetColor("_EmissionColor", levelColor.color);
+
+        if (MainMenu.roundsUntilGrow == 0)
         {
             MainMenu.roundsUntilGrow = 5;
             MainMenu.size++;

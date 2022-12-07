@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     private float dashCooldown = 1.5f;
     private float dashDuration = .1f;
     private float dashDurationTime = 0;
+    public Image dashImage;
+    private float dashBarFillAmount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +60,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Time.time > dashCooldownTime && Input.GetKey(KeyCode.LeftShift))
         {
+            dashImage.fillAmount = 0;
+            dashBarFillAmount = 0;
             dashMultiplier = dashSpeed;
             dashCooldownTime = Time.time + dashCooldown;
             dashDurationTime = Time.time + dashDuration;
@@ -65,6 +69,12 @@ public class PlayerMovement : MonoBehaviour
         if (Time.time > dashDurationTime)
         {
             dashMultiplier = 1;
+        }
+        if (dashImage.fillAmount != 1)
+        {
+            dashBarFillAmount = Mathf.Lerp(dashBarFillAmount, 1.48f, (dashCooldownTime - Time.time) * Time.deltaTime);
+            Debug.Log(dashBarFillAmount);
+            dashImage.fillAmount = dashBarFillAmount;
         }
 
     }

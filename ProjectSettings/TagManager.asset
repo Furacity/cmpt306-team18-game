@@ -19,6 +19,7 @@ TagManager:
   - menufader
   - ingamefader
   - shopcollider
+  - bubble
   layers:
   - Default
   - TransparentFX

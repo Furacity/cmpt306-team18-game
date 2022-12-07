@@ -35,6 +35,14 @@ public class EnemyProjectile : MonoBehaviour
             Destroy(this.gameObject);
 
         }
+        if (other.transform.tag == "wall")
+        {
+            Destroy(this.gameObject);
+        }
+        if (other.transform.tag == "bubble")
+        {
+            Destroy(this.gameObject);
+        }
 
 
 

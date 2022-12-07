@@ -32,6 +32,8 @@ public class EnemyController : MonoBehaviour
 
     public GameObject[] itemDrop = new GameObject[4];
 
+    public AudioSource deathNoise;
+
 
 
     // Update is called once per frame
@@ -101,6 +103,7 @@ public class EnemyController : MonoBehaviour
 
         if (health <= 0)
         {
+            deathNoise.Play();
             float rand = Random.Range(0.0f,10.0f);
             //GameObject effect = Instantiate(deathEffect, transform.position, transform.rotation);
             //Destroy(effect, 1.0f);

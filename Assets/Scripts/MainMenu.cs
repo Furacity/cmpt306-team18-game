@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
     public GameObject mutatorCanvasHolder;
     public GameObject gameSettingsCanvasHolder;
     public GameObject mainMenuCanvasHolder;
+    public GameObject settingsPanel;
     public Canvas mutators;
     public Canvas play;
     public Button normal;
@@ -26,6 +27,7 @@ public class MainMenu : MonoBehaviour
     public GameObject backAudio;
     public GameObject sliderAudio;
     public GameObject fadepanel;
+
     public Animator animator;
 
     private bool mutator = false;
@@ -95,6 +97,11 @@ public class MainMenu : MonoBehaviour
     {
         mutator = true;
         gameSettingsCanvasHolder.SetActive(true);
+    }
+
+    public void ShowSettingsCanvas()
+    {
+        settingsPanel.SetActive(true);
     }
 
     public void StartGame()
