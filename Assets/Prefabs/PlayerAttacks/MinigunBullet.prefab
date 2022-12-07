@@ -229,3 +229,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 1
   moveSpeed: 100
+  shotEffect: {fileID: 144344, guid: d157fcfc73457ea44b9a125e5be375ca, type: 3}
+  muzzleEffect: {fileID: 7516004826788876440, guid: 99d7f7b4a8d60064ab856e31bbfd7be0, type: 3}

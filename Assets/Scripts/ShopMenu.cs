@@ -7,6 +7,9 @@ public class ShopMenu : MonoBehaviour
 {
     public GameObject shopMenuUI;
     public GameObject upgradeEffect;
+    public GameObject Particles;
+    private GameObject particleEffect;
+
     public AudioSource UpgradeBasic;
     public AudioSource UpgradeShotgun;
     public AudioSource UpgradeMinigun;
@@ -31,6 +34,7 @@ public class ShopMenu : MonoBehaviour
     void Start()
     {
         shopMenuUI.SetActive(false);
+        particleEffect = Instantiate(Particles, transform.position, transform.rotation);
         basicAttack = GameObject.Find("Gun").GetComponent<PlayerAbilities>();
         shotgun = GameObject.Find("Gun").GetComponent<Shotgun>();
         minigun = GameObject.Find("Gun").GetComponent<MiniGun>();
@@ -212,6 +216,7 @@ public class ShopMenu : MonoBehaviour
             displayEffect();
             playSound(perk);
             purchased = true;
+            Destroy(particleEffect, 1.0f);
         }
         else
         {

@@ -860,6 +860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopMenuUI: {fileID: 23821419257011564}
   upgradeEffect: {fileID: 163064, guid: 2bdc186a2c521f1488fe14cb4a745323, type: 3}
+  Particles: {fileID: 3456768597155298673, guid: 0b28d04bc9a122543ae0f12a59c00b20, type: 3}
   UpgradeBasic: {fileID: 1459403192849522265}
   UpgradeShotgun: {fileID: 2668708602137816350}
   UpgradeMinigun: {fileID: 5164239250527292916}
@@ -1081,6 +1082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopMenuUI: {fileID: 2331529164924763643}
   upgradeEffect: {fileID: 163064, guid: 2bdc186a2c521f1488fe14cb4a745323, type: 3}
+  Particles: {fileID: 3456768597155298673, guid: 0b28d04bc9a122543ae0f12a59c00b20, type: 3}
   UpgradeBasic: {fileID: 1459403192849522265}
   UpgradeShotgun: {fileID: 2668708602137816350}
   UpgradeMinigun: {fileID: 5164239250527292916}
@@ -1205,6 +1207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopMenuUI: {fileID: 6282443121674307423}
   upgradeEffect: {fileID: 163064, guid: 2bdc186a2c521f1488fe14cb4a745323, type: 3}
+  Particles: {fileID: 3456768597155298673, guid: 0b28d04bc9a122543ae0f12a59c00b20, type: 3}
   UpgradeBasic: {fileID: 1459403192849522265}
   UpgradeShotgun: {fileID: 2668708602137816350}
   UpgradeMinigun: {fileID: 5164239250527292916}
@@ -1222,7 +1225,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 997410718472685289, guid: 8b5caf3eceb1d294db0a25e770eb1d8e, type: 3}
       propertyPath: m_Color.a
-      value: 0.27058825
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 997410718472685289, guid: 8b5caf3eceb1d294db0a25e770eb1d8e, type: 3}
       propertyPath: m_Color.b
@@ -1436,7 +1439,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 997410718472685289, guid: 8b5caf3eceb1d294db0a25e770eb1d8e, type: 3}
       propertyPath: m_Color.a
-      value: 0.27058825
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 997410718472685289, guid: 8b5caf3eceb1d294db0a25e770eb1d8e, type: 3}
       propertyPath: m_Color.b
@@ -1662,7 +1665,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 997410718472685289, guid: 8b5caf3eceb1d294db0a25e770eb1d8e, type: 3}
       propertyPath: m_Color.a
-      value: 0.27058825
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 997410718472685289, guid: 8b5caf3eceb1d294db0a25e770eb1d8e, type: 3}
       propertyPath: m_Color.b

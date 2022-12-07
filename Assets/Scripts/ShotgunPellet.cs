@@ -6,10 +6,16 @@ public class ShotgunPellet : MonoBehaviour
 {
     [SerializeField] private float lifeTime = 2.0f;
     [SerializeField] private float moveSpeed = 100.0f;
+
+    public GameObject shotEffect;
+    public GameObject muzzleEffect;
+
     
     // Start is called before the first frame update
     void Start()
     {
+        GameObject muzzle = Instantiate(muzzleEffect, transform.position, transform.rotation);
+        Destroy(muzzle, 1.0f);
         Destroy(this.gameObject, lifeTime);
     }
 
@@ -30,10 +36,14 @@ public class ShotgunPellet : MonoBehaviour
         {
             //Debug.Log(GameManager.instance.player.transform.GetChild(2).gameObject.GetComponent<PlayerAbilities>().GetDamage());
             other.GetComponent<EnemyController>().TakeDamage(GameManager.instance.player.transform.GetChild(2).gameObject.GetComponent<Shotgun>().GetDamage());
+            GameObject effect = Instantiate(shotEffect, transform.position, transform.rotation);
+            Destroy(effect, 1.0f);
             Destroy(this.gameObject);
         }
         if (other.transform.tag == "wall")
         {
+            GameObject effect = Instantiate(shotEffect, transform.position, transform.rotation);
+            Destroy(effect, 1.0f);
             Destroy(this.gameObject);
         }
     }

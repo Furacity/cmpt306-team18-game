@@ -360,6 +360,8 @@ MonoBehaviour:
   lifeTime: 2
   moveSpeed: 50
   explosion: {fileID: 8876833187763560136, guid: a989e250812254604b35e2cd785a6de7, type: 3}
+  shotEffect: {fileID: 3123075737211501182, guid: a3f72d5f213bb7d458dfc2c4369e7acf, type: 3}
+  muzzleEffect: {fileID: 8856629437242833163, guid: fca4c80c52330524cbd4309c118af89c, type: 3}
 --- !u!114 &1321264048012140997
 MonoBehaviour:
   m_ObjectHideFlags: 0

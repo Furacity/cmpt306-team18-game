@@ -9,10 +9,15 @@ public class RocketLauncherMissile : MonoBehaviour
     [SerializeField] private GameObject explosion;
     private bool hasPlayed = false;
 
+    public GameObject shotEffect;
+    public GameObject muzzleEffect;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject muzzle = Instantiate(muzzleEffect, transform.position, transform.rotation);
+        Destroy(muzzle, 1.0f);
         Destroy(this.gameObject, lifeTime);
     }
 
@@ -54,7 +59,8 @@ public class RocketLauncherMissile : MonoBehaviour
             hasPlayed = true;
             //Destroy(this.gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
-            
+            GameObject effect = Instantiate(shotEffect, transform.position, transform.rotation);
+            Destroy(effect, 1.0f);
         }
         else if (other.transform.tag == "wall" && !hasPlayed)
         {
@@ -63,7 +69,8 @@ public class RocketLauncherMissile : MonoBehaviour
             hasPlayed = true;
             //Destroy(this.gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
-            
+            GameObject effect = Instantiate(shotEffect, transform.position, transform.rotation);
+            Destroy(effect, 1.0f);
         }
     }
 
