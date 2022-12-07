@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class ShopMenu : MonoBehaviour
 {
     public GameObject shopMenuUI;
-    // public GameObject upgradeEffect;
+    public GameObject upgradeEffect;
+    public AudioSource UpgradeBasic;
+    public AudioSource UpgradeShotgun;
+    public AudioSource UpgradeMinigun;
+    public AudioSource UpgradeRocket;
 
     private PlayerAbilities basicAttack;
     private Shotgun shotgun;
@@ -72,10 +76,9 @@ public class ShopMenu : MonoBehaviour
         if (shopOpenedOnce == false)
         {  
             perk = Random.Range(0, 9);
-            price = Random.Range(3, 6) * MainMenu.currentRound; 
+            price = Random.Range(3, 6) * MainMenu.currentRound;
             shopOpenedOnce = true;
         }
-        //Description = gameObject.GetComponent<Text>();
         Price.text = "Price: " + price.ToString();
         perkDescription(perk);
         shopMenuUI.SetActive(true);
@@ -155,10 +158,47 @@ public class ShopMenu : MonoBehaviour
         }        
     }
 
+    private void playSound(int perk)
+    {
+        switch (perk)
+        {
+            default:
+                UpgradeBasic.Play ();
+                break;
+            case 1:
+                UpgradeBasic.Play ();
+                break;
+            case 2:
+                UpgradeShotgun.Play ();
+                break;
+            case 3:
+                UpgradeShotgun.Play ();
+                break;
+            case 4:
+                UpgradeShotgun.Play ();
+                break;
+            case 5:
+                UpgradeMinigun.Play ();
+                break;
+            case 6:
+                UpgradeMinigun.Play ();
+                break;
+            case 7:
+                UpgradeMinigun.Play ();
+                break;
+            case 8:
+                UpgradeRocket.Play ();
+                break;
+            case 9:
+                UpgradeRocket.Play ();
+                break;
+        }
+    }
+
     public void displayEffect()
     {
-        //GameObject effect = Instantiate(upgradeEffect, transform.position, transform.rotation);
-        //Destroy(effect, 1.0f);
+        GameObject effect = Instantiate(upgradeEffect, transform.position, transform.rotation);
+        Destroy(effect, 1.0f);
     }
 
     // checks that the player has enough money to buy an upgrade
@@ -169,7 +209,8 @@ public class ShopMenu : MonoBehaviour
             shopMenuUI.SetActive(false);
             perkSelection(perk);
             GameManager.instance.subtractCoins(price);
-            //displayEffect();
+            displayEffect();
+            playSound(perk);
             purchased = true;
         }
         else
