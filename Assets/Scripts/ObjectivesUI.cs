@@ -50,7 +50,7 @@ public class ObjectivesUI : MonoBehaviour
     {
         while (time < 100)
         {
-            currentObjectiveText.text = "Charging Portal: %" + time.ToString();
+            currentObjectiveText.text = "Charging Portal: " + time.ToString() + "%";
             yield return new WaitForSeconds(0.5f);
             time++;
             
