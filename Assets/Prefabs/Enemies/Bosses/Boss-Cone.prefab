@@ -1789,6 +1789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  maxMoveSpeed: 30
   health: 270
   ranged: 1
   enemyProjectile: {fileID: 3658566652807510723, guid: 9f5f97e83ea738341887aef046111c20, type: 3}
@@ -1799,7 +1800,8 @@ MonoBehaviour:
   contactDamageTime: 0
   seekDistance: 20
   rb: {fileID: 8600370256410479237}
-  healthRenderers: []
+  healthRenderers:
+  - {fileID: 8600370256410479232}
   currentDissolve: -1
   playerMesh: {fileID: 0}
   deathEffect: {fileID: 0}

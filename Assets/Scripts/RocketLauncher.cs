@@ -11,6 +11,7 @@ public class RocketLauncher : MonoBehaviour
     [SerializeField] private bool allowFire;
     [SerializeField] public float damage = 500.0f;
     public Text cooldownText;
+    
     // Start is called before the first frame update
     void Start()
     {
