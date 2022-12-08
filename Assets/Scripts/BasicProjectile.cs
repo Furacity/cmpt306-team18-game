@@ -39,11 +39,17 @@ public class BasicProjectile : MonoBehaviour
             Destroy(effect, 1.0f);
             Destroy(this.gameObject);
         }
+        if (other.transform.tag == "Boss")
+        {
+            other.GetComponent<ZuckerBoss>().TakeDamage(GameManager.instance.player.transform.GetChild(2).gameObject.GetComponent<PlayerAbilities>().GetDamage());
+            Destroy(this.gameObject);
+        }
         else if (other.transform.tag == "wall")
         {
             GameObject effect = Instantiate(shotEffect, transform.position, transform.rotation);
             Destroy(effect, 1.0f);
             Destroy(this.gameObject);
         }
+
     }
 }

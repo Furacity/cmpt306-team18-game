@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,10 +22,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        difficulty = MainMenu.difficulty;
-        currencyText.text = "Currency: " + MainMenu.currency;
-        deathCurrencyText.text = "Currency: " + MainMenu.currency;
-        killsText.text = "Kills: " + kills;
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(2))
+        {
+            difficulty = MainMenu.difficulty;
+            currencyText.text = "Currency: " + MainMenu.currency;
+            deathCurrencyText.text = "Currency: " + MainMenu.currency;
+            killsText.text = "Kills: " + kills;
+        }
     }
 
     // Update is called once per frame

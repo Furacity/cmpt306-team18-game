@@ -22,6 +22,8 @@ TagManager:
   - bubble
   - chargePortalCollider
   - blockPlayerCollider
+  - Boss
+  - enterArena
   layers:
   - Default
   - TransparentFX

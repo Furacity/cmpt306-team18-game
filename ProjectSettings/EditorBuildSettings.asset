@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PRG SCENE.unity
     guid: e3b77c8cee41f924c80bdcd50da9f9ba
+  - enabled: 1
+    path: Assets/Scenes/Arena.unity
+    guid: bcbc12481b60bc94a813190dea18cfb4
   m_configObjects: {}

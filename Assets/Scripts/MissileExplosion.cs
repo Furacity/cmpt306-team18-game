@@ -24,5 +24,11 @@ public class MissileExplosion : MonoBehaviour
             //Debug.Log(GameManager.instance.player.transform.GetChild(2).gameObject.GetComponent<PlayerAbilities>().GetDamage());
             other.GetComponent<EnemyController>().TakeDamage(GameManager.instance.player.transform.GetChild(2).gameObject.GetComponent<RocketLauncher>().GetDamage());
         }
+        if (other.transform.tag == "Boss")
+        {
+            other.GetComponent<ZuckerBoss>().TakeDamage(GameManager.instance.player.transform.GetChild(2).gameObject.GetComponent<PlayerAbilities>().GetDamage());
+            Destroy(this.gameObject);
+        }
+
     }
 }

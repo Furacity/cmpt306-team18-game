@@ -62,6 +62,16 @@ public class RocketLauncherMissile : MonoBehaviour
             GameObject effect = Instantiate(shotEffect, transform.position, transform.rotation);
             Destroy(effect, 1.0f);
         }
+        if (other.transform.tag == "Boss" && !hasPlayed)
+        {
+            GetComponent<WeaponSounds>().OnRocketExplode();
+            other.GetComponent<ZuckerBoss>().TakeDamage(GameManager.instance.player.transform.GetChild(2).gameObject.GetComponent<PlayerAbilities>().GetDamage());
+            hasPlayed = true;
+            //Destroy(this.gameObject);
+            Instantiate(explosion, transform.position, transform.rotation);
+            GameObject effect = Instantiate(shotEffect, transform.position, transform.rotation);
+            Destroy(effect, 1.0f);
+        }
         else if (other.transform.tag == "wall" && !hasPlayed)
         {
             GetComponent<WeaponSounds>().OnRocketExplode();
