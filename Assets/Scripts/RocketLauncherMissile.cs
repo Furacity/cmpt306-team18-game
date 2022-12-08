@@ -43,6 +43,7 @@ public class RocketLauncherMissile : MonoBehaviour
         {
             
             Instantiate(explosion, transform.position, transform.rotation);
+            effectBlast();
             GetComponent<WeaponSounds>().OnRocketExplode();
             HideMissile();
             hasPlayed = true;
@@ -59,8 +60,7 @@ public class RocketLauncherMissile : MonoBehaviour
             hasPlayed = true;
             //Destroy(this.gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
-            GameObject effect = Instantiate(shotEffect, transform.position, transform.rotation);
-            Destroy(effect, 1.0f);
+            effectBlast();
         }
         if (other.transform.tag == "Boss" && !hasPlayed)
         {
@@ -69,8 +69,7 @@ public class RocketLauncherMissile : MonoBehaviour
             hasPlayed = true;
             //Destroy(this.gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
-            GameObject effect = Instantiate(shotEffect, transform.position, transform.rotation);
-            Destroy(effect, 1.0f);
+            effectBlast();
         }
         else if (other.transform.tag == "wall" && !hasPlayed)
         {
@@ -79,8 +78,7 @@ public class RocketLauncherMissile : MonoBehaviour
             hasPlayed = true;
             //Destroy(this.gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
-            GameObject effect = Instantiate(shotEffect, transform.position, transform.rotation);
-            Destroy(effect, 1.0f);
+            effectBlast();
         }
     }
 
@@ -89,5 +87,11 @@ public class RocketLauncherMissile : MonoBehaviour
         Destroy(GetComponent<BoxCollider>());
         Destroy(GetComponent<Rigidbody>());
         Destroy(GetComponent<TrailRenderer>());
+    }
+
+    private void effectBlast()
+    {
+        GameObject effect = Instantiate(shotEffect, transform.position, transform.rotation);
+        Destroy(effect, 1.0f);
     }
 }
