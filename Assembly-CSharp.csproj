@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\ZuckerBoss.cs" />
     <Compile Include="Assets\Scripts\ObjectivesUI.cs" />
     <Compile Include="Assets\Scripts\PortalCover.cs" />
+    <Compile Include="Assets\Scripts\Teleporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Edge Detection.shader" />

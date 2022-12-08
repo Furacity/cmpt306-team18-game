@@ -29,6 +29,13 @@ public class GameManager : MonoBehaviour
             deathCurrencyText.text = "Currency: " + MainMenu.currency;
             killsText.text = "Kills: " + kills;
         }
+        else
+        {
+            difficulty = MainMenu.difficulty;
+            currencyText.text = "";
+            deathCurrencyText.text = "";
+            killsText.text = "";
+        }
     }
 
     // Update is called once per frame
@@ -54,16 +61,34 @@ public class GameManager : MonoBehaviour
     }
     public void addCoins(int value)
     {
-        MainMenu.currency += value;
-        currencyText.text = "Currency: " + MainMenu.currency;
-        deathCurrencyText.text = "Currency: " + MainMenu.currency;
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(2))
+        {
+            MainMenu.currency += value;
+            currencyText.text = "Currency: " + MainMenu.currency;
+            deathCurrencyText.text = "Currency: " + MainMenu.currency;
+        }
+        else
+        {
+            MainMenu.currency += value;
+            currencyText.text = "";
+            deathCurrencyText.text = "";
+        }
     }
 
     public void subtractCoins(int value)
     {
-        MainMenu.currency -= value;
-        currencyText.text = "Currency: " + MainMenu.currency;
-        deathCurrencyText.text = "Currency: " + MainMenu.currency;
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(2))
+        {
+            MainMenu.currency -= value;
+            currencyText.text = "Currency: " + MainMenu.currency;
+            deathCurrencyText.text = "Currency: " + MainMenu.currency;
+        }
+        else
+        {
+            MainMenu.currency -= value;
+            currencyText.text = "";
+            deathCurrencyText.text = "";
+        }
     }
     public void addKill(){
         kills++;

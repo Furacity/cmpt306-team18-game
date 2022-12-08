@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class FadeController : MonoBehaviour
 {
@@ -24,7 +26,15 @@ public class FadeController : MonoBehaviour
             controller.GetComponent<MainMenu>().OnFadeComplete();
         } else if (CompareTag("ingamefader"))
         {
-            controller.GetComponent<DungeonGenerator>().ReloadScene();
+            if(MainMenu.roundsUntilGrow == 0)
+            {
+                SceneManager.LoadScene(2);
+            }
+            else
+            {
+                controller.GetComponent<DungeonGenerator>().ReloadScene();
+            }
+            
         }
         
     }

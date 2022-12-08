@@ -24,6 +24,7 @@ TagManager:
   - blockPlayerCollider
   - Boss
   - enterArena
+  - beam
   layers:
   - Default
   - TransparentFX

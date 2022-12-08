@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7535131718253708446}
   - component: {fileID: 2786983289667570489}
   m_Layer: 0
-  m_Name: pyramidProjectile
+  m_Name: pyramidProjectile 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

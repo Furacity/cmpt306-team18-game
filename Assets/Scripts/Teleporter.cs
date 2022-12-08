@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Arena : MonoBehaviour
+public class Teleporter : MonoBehaviour
 {
-    public GameObject forceField;
-    public Text roundText;
     // Start is called before the first frame update
     void Start()
     {
-        forceField.SetActive(false);
-        roundText.text = "Don't Keep them Waiting";
+        
     }
 
     // Update is called once per frame
@@ -20,12 +17,13 @@ public class Arena : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Beam Touched");
         if (other.gameObject.CompareTag("Player") && other is CapsuleCollider)
         {
-            Destroy(GetComponent<Rigidbody>());
-            forceField.SetActive(true);
+            Debug.Log("Switching Scene");
+            SceneManager.LoadScene(1);
         }
     }
 }
