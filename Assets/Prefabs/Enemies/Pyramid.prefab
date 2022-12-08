@@ -400,9 +400,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.5
+  maxMoveSpeed: 30
   health: 100
   ranged: 1
-  enemyProjectile: {fileID: 2374757139431103905, guid: d95eb2bedb3132e48b7ad9fbd083a0cc, type: 3}
+  enemyProjectile: {fileID: 2374757139431103905, guid: 8324efa82a5fe794ea77cc554531b4a6, type: 3}
   projectileFireRate: 5
   projectileRange: 20
   contactDamageToPlayer: 20
