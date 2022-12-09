@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -279,7 +279,13 @@ MonoBehaviour:
   levelManager: {fileID: 4795666781917137058, guid: d32908881a7576e4eb97db2af90e7a9e, type: 3}
   currencyText: {fileID: 627064322}
   deathCurrencyText: {fileID: 1632665310}
+  deathRoundText: {fileID: 6696018069136589358}
+  deathPointsText: {fileID: 6696018069136589357}
   killsText: {fileID: 1100082002}
+  difficulty: 0
+  scaleTimer: 0
+  scaleThresh: 5
+  difficultyScalar: 0.1
 --- !u!1 &1000594959 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6696018068521884709, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
@@ -704,6 +710,28 @@ MonoBehaviour:
 --- !u!114 &6696018069136589356 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2106505260, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+  m_PrefabInstance: {fileID: 6696018069136589354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6696018069136589357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5509476678254917813, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
+  m_PrefabInstance: {fileID: 6696018069136589354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6696018069136589358 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6501558546562209395, guid: 36077c5b7aba84f4da0812135f5cfcc2, type: 3}
   m_PrefabInstance: {fileID: 6696018069136589354}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

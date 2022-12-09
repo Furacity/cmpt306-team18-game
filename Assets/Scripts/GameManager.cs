@@ -7,12 +7,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public int coins = 0;
-    private int kills = 0;
     public static GameManager instance = null;
     public GameObject player;
     public GameObject levelManager;
     public Text currencyText;
     public Text deathCurrencyText;
+    public Text deathRoundText;
+    public Text deathPointsText;
     public Text killsText;
     public float difficulty;
     [SerializeField] private float scaleTimer = 0f;
@@ -27,7 +28,9 @@ public class GameManager : MonoBehaviour
             difficulty = MainMenu.difficulty;
             currencyText.text = "Currency: " + MainMenu.currency;
             deathCurrencyText.text = "Currency: " + MainMenu.currency;
-            killsText.text = "Kills: " + kills;
+            killsText.text = "Kills: " + MainMenu.kills;
+            deathPointsText.text = "Points: " + ((MainMenu.kills * 10) + (MainMenu.currency * 2));
+            deathRoundText.text = "Round " + MainMenu.currentRound;
         }
         else
         {
@@ -35,6 +38,8 @@ public class GameManager : MonoBehaviour
             currencyText.text = "";
             deathCurrencyText.text = "";
             killsText.text = "";
+            deathPointsText.text = "";
+            deathRoundText.text = "";
         }
     }
 
@@ -66,12 +71,14 @@ public class GameManager : MonoBehaviour
             MainMenu.currency += value;
             currencyText.text = "Currency: " + MainMenu.currency;
             deathCurrencyText.text = "Currency: " + MainMenu.currency;
+            deathPointsText.text = "Points: " + ((MainMenu.kills * 10) + (MainMenu.currency * 2));
         }
         else
         {
             MainMenu.currency += value;
             currencyText.text = "";
             deathCurrencyText.text = "";
+            deathPointsText.text = "";
         }
     }
 
@@ -82,19 +89,22 @@ public class GameManager : MonoBehaviour
             MainMenu.currency -= value;
             currencyText.text = "Currency: " + MainMenu.currency;
             deathCurrencyText.text = "Currency: " + MainMenu.currency;
+            deathPointsText.text = "Points: " + ((MainMenu.kills * 10) + (MainMenu.currency * 2));
         }
         else
         {
             MainMenu.currency -= value;
             currencyText.text = "";
             deathCurrencyText.text = "";
+            deathPointsText.text = "";
         }
     }
     public void addKill(){
-        kills++;
-        killsText.text = "Kills: " + kills;
+        MainMenu.kills++;
+        killsText.text = "Kills: " + MainMenu.kills;
+        deathPointsText.text = "Points: " + ((MainMenu.kills * 10) + (MainMenu.currency * 2));
     }
     public int getKills(){
-        return kills;
+        return MainMenu.kills;
     }
 }

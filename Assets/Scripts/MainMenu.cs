@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     static public int roundsUntilGrow { get; set; }
 
     static public int currency { get; set; }
+    static public int kills { get; set; }
 
     public GameObject mutatorCanvasHolder;
     public GameObject gameSettingsCanvasHolder;
@@ -35,6 +36,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        kills = 0;
         difficulty = 0.9f;
         density = 2;
         size = 10;

@@ -1455,7 +1455,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Risk of Zucc
+  m_Text: Risk of Geometry
 --- !u!222 &293707424
 CanvasRenderer:
   m_ObjectHideFlags: 0

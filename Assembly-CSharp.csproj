@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerDamage.cs" />
+    <Compile Include="Assets\Scripts\ObjectivesUI.cs" />
     <Compile Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Plexus\Plexus.cs" />
     <Compile Include="Assets\Scripts\FadeController.cs" />
     <Compile Include="Assets\Scripts\DeathAnimationHandler.cs" />
@@ -65,6 +66,8 @@
     <Compile Include="Assets\Scripts\DamageBooster.cs" />
     <Compile Include="Assets\Scripts\BasicProjectile.cs" />
     <Compile Include="Assets\Scripts\RocketLauncher.cs" />
+    <Compile Include="Assets\Scripts\ZuckerBoss.cs" />
+    <Compile Include="Assets\Scripts\Arena.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PowerUpSounds.cs" />
     <Compile Include="Assets\Scripts\Perks (defunct).cs" />
@@ -87,23 +90,20 @@
     <Compile Include="Assets\Addons\Cool Visual Effects - Part 1\Scripts\ConstantRotation.cs" />
     <Compile Include="Assets\Scripts\PlayerAbilities.cs" />
     <Compile Include="Assets\Addons\Ultimate 10 Plus Shaders\Scripts\U10PS_MouseRotation.cs" />
+    <Compile Include="Assets\Scripts\Teleporter.cs" />
     <Compile Include="Assets\Scripts\RocketLauncherMissile.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\WeaponSounds.cs" />
     <Compile Include="Assets\Scripts\EnemyProjectileDestruct.cs" />
     <Compile Include="Assets\Addons\Cool Visual Effects - Part 1\Scripts\EffectManager.cs" />
     <Compile Include="Assets\Scripts\EnemyProjectile.cs" />
+    <Compile Include="Assets\Scripts\PortalCover.cs" />
     <Compile Include="Assets\Scripts\Coin.cs" />
     <Compile Include="Assets\Scripts\ShopMenu.cs" />
     <Compile Include="Assets\Addons\Ultimate 10 Plus Shaders\Scripts\U10PS_SnowOverTime.cs" />
     <Compile Include="Assets\Scripts\HealthPack.cs" />
     <Compile Include="Assets\Scripts\MutatorSingleton.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
-    <Compile Include="Assets\Scripts\Arena.cs" />
-    <Compile Include="Assets\Scripts\ZuckerBoss.cs" />
-    <Compile Include="Assets\Scripts\ObjectivesUI.cs" />
-    <Compile Include="Assets\Scripts\PortalCover.cs" />
-    <Compile Include="Assets\Scripts\Teleporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Addons\Ultimate 10 Plus Shaders\Shaders\Edge Detection.shader" />
