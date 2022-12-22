@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class ObjectivesUI : MonoBehaviour
 {
@@ -28,11 +29,6 @@ public class ObjectivesUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (startCharging == false && Input.GetKeyDown("f") && portalFound == true)
-        {
-            chargePortalText.text = "";
-            startCharging = true;
-        }
         if (startCharging == true)
         {
             StartCoroutine(ChargePortal());
@@ -44,6 +40,15 @@ public class ObjectivesUI : MonoBehaviour
     public void FoundPortalText()
     {
         currentObjectiveText.text = "charge the portal";
+    }
+
+    public void OnChargePressed(InputAction.CallbackContext context)
+    {
+        if (startCharging == false && portalFound == true)
+        {
+            chargePortalText.text = "";
+            startCharging = true;
+        }
     }
 
     public IEnumerator ChargePortal()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -42,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!dead)
         {
-            Movement();
+            //Movement();
             LookAtCamera();
         }
         else if(!fading)
@@ -114,9 +115,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Movement()
+    public void Movement(InputAction.CallbackContext context)
     {
-        var dir = new Vector3(Input.GetAxis("Horizontal"), downSpeed, Input.GetAxis("Vertical"));
+        var value = context.ReadValue<Vector2>();
+        var dir = new Vector3(value.x, downSpeed, value.y);
         /*if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
